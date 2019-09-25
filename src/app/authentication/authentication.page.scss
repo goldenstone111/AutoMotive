@@ -1,0 +1,36 @@
+ion-grid{
+   
+    height: 100vh;
+    background-size: cover;
+    background-position: right;
+    background-image : url('../../assets/authback.png');
+    .logo{
+        margin-top: 10vh;
+        .logodiv{
+            width: 35vw;
+            height: 35vw;
+            margin-left:-2vw;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .authbtn{
+        font-family: var(--theme-font);
+        font-weight: 600;
+        font-size: 4.5vw;
+        width:35vw;
+    }
+    .logo{
+        margin-top: 10vh;
+    }
+    .authbtns{
+        margin-top: 50vh;
+    }
+}
+
+

@@ -1,0 +1,7 @@
+{
+  "name": "AutoMotive",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

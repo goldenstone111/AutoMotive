@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="logo">
+      <ion-col offset="4" size="8" class="ion-text-center">
+        <div class="logodiv">
+          <img src="../../assets/shapes.svg" />
+        </div>
+      </ion-col>
+      <ion-col text-center size="12" class="headings">
+        <h3>
+          Welcome!
+        </h3>
+        <p>
+          Please enter your phone number for us to send a verification code.
+        </p>
+        <div>
+          <img style="height:15vw;" src="../../assets/Phone.svg" alt="" />
+        </div>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-item class="input-structure" lines="none">
+          <ion-select color="primary"  #select1  >
+            <ion-select-option  *ngFor="let c of countries" value="{{ c.code }}">{{ c.name }}</ion-select-option>
+          </ion-select>
+          <ion-label color="primary">{{initial.dial_code}}</ion-label>
+          <ion-input placeholder="Phone Number" type="tel"></ion-input>
+          <!-- <ion-select ng-model="country" ng-init="country=countries[0]" ng-options="country.name for country in countries"></ion-select>
+          <input type="text" ng-model="country.dial_code"> -->
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
