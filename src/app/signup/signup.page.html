@@ -1,3 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <ion-grid>
     <form [formGroup]="signupForm">
@@ -77,6 +84,9 @@
           >
             <ion-ripple-effect></ion-ripple-effect> SIGN UP
           </ion-button>
+        </ion-col>
+        <ion-col class="ion-text-center" *ngIf="!signupForm.valid" >
+          <ion-label class="already">Already have an account? </ion-label><ion-button fill="clear" no-padding no-margin style="vertical-align: middle;" routerLink="/login" >Login</ion-button>
         </ion-col>
       </ion-row>
     </form>

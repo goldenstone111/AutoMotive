@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'authentication', loadChildren: './authentication/authentication.module#AuthenticationPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'otpverify', loadChildren: './otpverify/otpverify.module#OtpverifyPageModule' },
 ];
 
 @NgModule({

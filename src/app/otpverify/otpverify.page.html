@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="logo">
+      <ion-col offset="4" size="8" class="ion-text-center">
+        <div class="logodiv">
+          <img src="../../assets/shapes.svg" />
+        </div>
+      </ion-col>
+      <ion-col text-center size="12" class="headings">
+        <h3>
+          Enter Verification Code
+        </h3>
+        <p>A verification OTP has been sent to {{ number }}</p>
+        <div>
+          <img style="height:15vw;" src="../../assets/phone1.svg" alt="" />
+        </div>
+      </ion-col>
+      <ion-col class="ion-text-center" size="12">
+        <form class="form-container">
+          <div>
+            <ion-input
+              name="a"
+              #a
+              (keyup)="moveFocus($event, b, '')"
+              type="tel"
+              maxlength="1"
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              name="b"
+              #b
+              (keyup)="moveFocus($event, c, a)"
+              type="tel"
+              maxlength="1"
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              name="c"
+              #c
+              (keyup)="moveFocus($event, d, b)"
+              type="tel"
+              maxlength="1"
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              name="d"
+              #d
+              (keyup)="moveFocus($event, e, c)"
+              type="tel"
+              maxlength="1"
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              name="e"
+              #e
+              (keyup)="moveFocus($event, f, d)"
+              type="tel"
+              maxlength="1"
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              name="f"
+              #f
+              (keyup)="moveFocus($event, '', e)"
+              type="tel"
+              maxlength="1"
+            ></ion-input>
+          </div>
+        </form>
+        <div class="otpinfo">
+          <div *ngIf="isTimer">
+            <p>
+              You will receive OTP in
+              <span class="timeleft">{{ timeLeft }}</span> seconds
+            </p>
+          </div>
+          <div *ngIf="!isTimer">
+            <p>Did not receive OTP?</p>
+            <ion-button fill="clear"> Resend OTP </ion-button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
