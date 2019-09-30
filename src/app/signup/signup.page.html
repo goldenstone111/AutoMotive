@@ -21,35 +21,60 @@
 
         <ion-col size="12" class="ion-text-center">
           <ion-item class="input-structure" lines="none">
-            <ion-select formControlName="countryform" (ionChange)="setCountryCode(c)" [(ngModel)]="c">
-              <ion-select-option *ngFor="let c of countries; let i = index" [value]="i">
-                {{ c.name }}</ion-select-option>
+            <ion-select
+              formControlName="countryform"
+              (ionChange)="setCountryCode(c)"
+              [(ngModel)]="c"
+            >
+              <ion-select-option
+                *ngFor="let c of countries; let i = index"
+                [value]="i"
+              >
+                {{ c.name }}</ion-select-option
+              >
             </ion-select>
             <ion-label color="primary">{{ country.dial_code }}</ion-label>
-            <ion-input placeholder="Phone Number" formControlName="mobile" maxLength="10" type="tel"></ion-input>
+            <ion-input
+              placeholder="Phone Number"
+              formControlName="mobile"
+              maxLength="10"
+              type="tel"
+            ></ion-input>
           </ion-item>
           <div class="terms">
             <ion-item lines="none">
-              <ion-checkbox color="primary" checked="false" formControlName="terms"></ion-checkbox>
+              <ion-checkbox
+                color="primary"
+                checked="false"
+                formControlName="terms"
+              ></ion-checkbox>
             </ion-item>
             <ion-item lines="none">
               <p>
                 I hereby agree to the
-                <span routerLink="/" routerDirection="forward">Terms & Conditions</span>
+                <span routerLink="/" routerDirection="forward"
+                  >Terms & Conditions</span
+                >
                 and
-                <span routerLink="/" routerDirection="forward">Privacy policy</span>
+                <span routerLink="/" routerDirection="forward"
+                  >Privacy policy</span
+                >
               </p>
             </ion-item>
           </div>
         </ion-col>
         <ion-col text-center size="12" class="headings">
-          <ion-button [disabled]="!signupForm.valid" class="authbtn" (click)="register()" routerDirection="forward"
+          <ion-button
+            [disabled]="!signupForm.valid"
+            class="authbtn"
+            (click)="register()"
+            routerDirection="forward"
             [ngStyle]="{
               'background-color': signupForm.valid
                 ? 'var(--theme-color)'
                 : 'var(--disbale-color)'
-              }">
-           
+            }"
+          >
             <ion-ripple-effect></ion-ripple-effect> SIGN UP
           </ion-button>
         </ion-col>
