@@ -117,7 +117,7 @@ export class SignupPage implements OnInit {
     this.signupForm = this.formBuilder.group({
       countryform: new FormControl('',[Validators.required]),
       mobile: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
-      terms: new FormControl ('', [Validators.required])
+      terms: new FormControl ('', [Validators.requiredTrue])
     });
     this.signupForm.valueChanges.subscribe(console.log);
     
