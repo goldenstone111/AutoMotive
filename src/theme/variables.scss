@@ -71,4 +71,15 @@
   --theme-color-danger:#cb0000;
   --font-color:#626161;
   --theme-font: 'Open Sans', sans-serif;
+  --disbale-color: #626161;
+ //global css
+  ion-item{
+    --padding-start: 0px;
+}
+.disable{
+  background-color: var(--ion-color-tertiary);
+}
+.enable{
+  background-color: var(--ion-color-primary);
+}
 }

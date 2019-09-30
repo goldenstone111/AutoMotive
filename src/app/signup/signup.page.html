@@ -1,33 +1,59 @@
 <ion-content>
   <ion-grid>
-    <ion-row class="logo">
-      <ion-col offset="4" size="8" class="ion-text-center">
-        <div class="logodiv">
-          <img src="../../assets/shapes.svg" />
-        </div>
-      </ion-col>
-      <ion-col text-center size="12" class="headings">
-        <h3>
-          Welcome!
-        </h3>
-        <p>
-          Please enter your phone number for us to send a verification code.
-        </p>
-        <div>
-          <img style="height:15vw;" src="../../assets/Phone.svg" alt="" />
-        </div>
-      </ion-col>
-      <ion-col size="12" class="ion-text-center" >
-        <ion-item class="input-structure" lines="none">
-          <ion-select color="primary"  #select1  >
-            <ion-select-option  *ngFor="let c of countries" value="{{ c.code }}">{{ c.name }}</ion-select-option>
-          </ion-select>
-          <ion-label color="primary">{{initial.dial_code}}</ion-label>
-          <ion-input placeholder="Phone Number" type="text"></ion-input>
-          <!-- <ion-select ng-model="country" ng-init="country=countries[0]" ng-options="country.name for country in countries"></ion-select>
-          <input type="text" ng-model="country.dial_code"> -->
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <form [formGroup]="signupForm">
+      <ion-row class="logo">
+        <ion-col offset="4" size="8" class="ion-text-center">
+          <div class="logodiv">
+            <img src="../../assets/shapes.svg" />
+          </div>
+        </ion-col>
+        <ion-col text-center size="12" class="headings">
+          <h3>
+            Welcome!
+          </h3>
+          <p>
+            Please enter your phone number for us to send a verification code.
+          </p>
+          <div>
+            <img style="height:15vw;" src="../../assets/Phone.svg" alt="" />
+          </div>
+        </ion-col>
+
+        <ion-col size="12" class="ion-text-center">
+          <ion-item class="input-structure" lines="none">
+            <ion-select formControlName="countryform" (ionChange)="setCountryCode(c)" [(ngModel)]="c">
+              <ion-select-option *ngFor="let c of countries; let i = index" [value]="i">
+                {{ c.name }}</ion-select-option>
+            </ion-select>
+            <ion-label color="primary">{{ country.dial_code }}</ion-label>
+            <ion-input placeholder="Phone Number" formControlName="mobile" maxLength="10" type="tel"></ion-input>
+          </ion-item>
+          <div class="terms">
+            <ion-item lines="none">
+              <ion-checkbox color="primary" checked="false" formControlName="terms"></ion-checkbox>
+            </ion-item>
+            <ion-item lines="none">
+              <p>
+                I hereby agree to the
+                <span routerLink="/" routerDirection="forward">Terms & Conditions</span>
+                and
+                <span routerLink="/" routerDirection="forward">Privacy policy</span>
+              </p>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col text-center size="12" class="headings">
+          <ion-button [disabled]="!signupForm.valid" class="authbtn" routerLink="/signup" routerDirection="forward"
+            [ngStyle]="{
+              'background-color': signupForm.valid
+                ? 'var(--theme-color)'
+                : 'var(--disbale-color)'
+              }">
+              <!-- {'background-color':celeb.status === 'Dead' ? 'red' : 'green' } -->
+            <ion-ripple-effect></ion-ripple-effect> SIGN UP
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
   </ion-grid>
 </ion-content>

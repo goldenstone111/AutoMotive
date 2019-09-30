@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-
+import { FormBuilder, FormGroup, AbstractControl, FormControl , Validators } from '@angular/forms';
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.page.html",
@@ -7,16 +7,17 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 })
 export class SignupPage implements OnInit {
   initial:any;
+  country:any;
   countries = [
     {
       name: "United States",
       dial_code: "+1",
-      code: "US"
+      code: "USA"
     },
     {
       name: "Israel",
       dial_code: "+972",
-      code: "IL"
+      code: "ILY"
     },
     {
       name: "Afghanistan",
@@ -104,9 +105,32 @@ export class SignupPage implements OnInit {
       code: "BD"
     }
   ];
-  constructor() {}
+  signupForm: FormGroup;
+  
+  constructor(private formBuilder: FormBuilder) {
+   
+  }
+
+
 
   ngOnInit() {
-    this.initial=this.countries[0];
+    this.signupForm = this.formBuilder.group({
+      countryform: new FormControl('',[Validators.required]),
+      mobile: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
+      terms: new FormControl ('', [Validators.required])
+    });
+    this.signupForm.valueChanges.subscribe(console.log);
+    
+    this.country=this.countries[0];
+    console.log("Initial country ", this.country );
+    
+  }
+  setCountryCode(id){
+    console.log(id);
+    
+
+    this.country=this.countries[id];
+    console.log("select country", this.country);
+    
   }
 }

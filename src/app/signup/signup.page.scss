@@ -21,8 +21,53 @@
 }
 
 .input-structure{
-    border: 1px solid #626161;
+    border: 1px solid var(--font-color);
     border-radius: 10px;
     padding: 5px 0px;
     margin: 0vw 6vw;
+    ion-select{
+        font-family: var(--theme-font);
+        color: var(--theme-color);
+    }
+    ion-input{
+        font-family: var(--theme-font);
+        color: var(--font-color);
+        font-family: "open sans",sans-serif;
+        font-weight: 600;
+    }
+}
+.terms{
+
+    ion-item{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    margin: 0vw 7vw;
+    ion-checkbox{
+        width: 6vw;
+        height: 6vw;
+        margin: 0px;
+    }
+    p{
+        font-family: var(--theme-font);
+        font-size: 3.7vw;
+        color: var(--font-color);
+    }
+    span{
+        text-decoration: underline;
+        color: var(--theme-color);
+    }
+    span:focus {
+        outline: 0;
+      }
+}
+.authbtn{
+    --background: transparent;
+    margin-top: 10vw;
+    border-radius: 8vw;
+    width: 40vw;
+    font-size: 5vw;
+    font-family: var(--theme-font);
+
 }
