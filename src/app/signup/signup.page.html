@@ -43,13 +43,13 @@
           </div>
         </ion-col>
         <ion-col text-center size="12" class="headings">
-          <ion-button [disabled]="!signupForm.valid" class="authbtn" routerLink="/signup" routerDirection="forward"
+          <ion-button [disabled]="!signupForm.valid" class="authbtn" (click)="register()" routerDirection="forward"
             [ngStyle]="{
               'background-color': signupForm.valid
                 ? 'var(--theme-color)'
                 : 'var(--disbale-color)'
               }">
-              <!-- {'background-color':celeb.status === 'Dead' ? 'red' : 'green' } -->
+           
             <ion-ripple-effect></ion-ripple-effect> SIGN UP
           </ion-button>
         </ion-col>

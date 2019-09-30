@@ -127,8 +127,6 @@ export class SignupPage implements OnInit {
   }
   setCountryCode(id){
     console.log(id);
-    
-
     this.country=this.countries[id];
     console.log("select country", this.country);
     
