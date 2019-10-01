@@ -56,13 +56,8 @@ export class OtpverifyPage implements OnInit {
   verifyOtp(){
     if(this.otpform.valid){
       console.log(this.otpform.value);
-      for(let i=1;i<=6;i++){
-        this.otpkey.push(this.otpform.value.num+i);
-      }
+      this.otpkey=Object.values(this.otpform.value);
       console.log("otpkey", this.otpkey);
-      
     }
-    
-    
   }
 }
