@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-
+import { FormGroup,FormBuilder,FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: "app-otpverify",
   templateUrl: "./otpverify.page.html",
@@ -9,7 +10,9 @@ export class OtpverifyPage implements OnInit {
   isTimer=true;
   timer:any;
   timeLeft: number = 60;
-  constructor() {
+  otpform: FormGroup;
+  otpkey:any=[];
+  constructor(private formBuilder: FormBuilder, public router : Router) {
     this.startTimer();
   }
 
@@ -24,7 +27,17 @@ export class OtpverifyPage implements OnInit {
     },1000)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.otpform = this.formBuilder.group({
+      num1: new FormControl('',[Validators.required]),
+      num2: new FormControl('',[Validators.required]),
+      num3: new FormControl('',[Validators.required]),
+      num4: new FormControl('',[Validators.required]),
+      num5: new FormControl('',[Validators.required]),
+      num6: new FormControl('',[Validators.required])
+    });
+    
+  }
   moveFocus(event, nextElement, previousElement) {
     if (event.keyCode == 8 && previousElement) {
       previousElement.setFocus();
@@ -35,5 +48,21 @@ export class OtpverifyPage implements OnInit {
     } else {
       event.path[0].value = "";
     }
+    if(nextElement==''){
+      this.verifyOtp();
+    }
+  }
+
+  verifyOtp(){
+    if(this.otpform.valid){
+      console.log(this.otpform.value);
+      for(let i=1;i<=6;i++){
+        this.otpkey.push(this.otpform.value.num+i);
+      }
+      console.log("otpkey", this.otpkey);
+      
+    }
+    
+    
   }
 }

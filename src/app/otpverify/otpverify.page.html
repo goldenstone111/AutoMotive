@@ -23,11 +23,12 @@
         </div>
       </ion-col>
       <ion-col class="ion-text-center" size="12">
-        <form class="form-container">
+        <form class="form-container" [formGroup]="otpform">
           <div>
             <ion-input
               name="a"
               #a
+              formControlName="num1"
               (keyup)="moveFocus($event, b, '')"
               type="tel"
               maxlength="1"
@@ -39,6 +40,7 @@
             <ion-input
               name="b"
               #b
+              formControlName="num2"
               (keyup)="moveFocus($event, c, a)"
               type="tel"
               maxlength="1"
@@ -50,6 +52,7 @@
             <ion-input
               name="c"
               #c
+              formControlName="num3"
               (keyup)="moveFocus($event, d, b)"
               type="tel"
               maxlength="1"
@@ -61,6 +64,7 @@
             <ion-input
               name="d"
               #d
+              formControlName="num4"
               (keyup)="moveFocus($event, e, c)"
               type="tel"
               maxlength="1"
@@ -72,6 +76,7 @@
             <ion-input
               name="e"
               #e
+              formControlName="num5"
               (keyup)="moveFocus($event, f, d)"
               type="tel"
               maxlength="1"
@@ -83,9 +88,11 @@
             <ion-input
               name="f"
               #f
+              formControlName="num6"
               (keyup)="moveFocus($event, '', e)"
               type="tel"
               maxlength="1"
+              
             ></ion-input>
           </div>
         </form>
