@@ -58,6 +58,9 @@ export class OtpverifyPage implements OnInit {
       console.log(this.otpform.value);
       this.otpkey=Object.values(this.otpform.value);
       console.log("otpkey", this.otpkey);
+      if(this.otpkey===this.otpkey){
+        this.router.navigate(['/completeprofile']);
+      }
     }
   }
 }

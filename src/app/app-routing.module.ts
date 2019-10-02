@@ -7,7 +7,10 @@ const routes: Routes = [
   { path: 'authentication', loadChildren: './authentication/authentication.module#AuthenticationPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'otpverify', loadChildren: './otpverify/otpverify.module#OtpverifyPageModule' },
+  { path: 'otpverify', loadChildren: './otpverify/otpverify.module#OtpverifyPageModule' },  { path: 'completeprofile', loadChildren: './completeprofile/completeprofile.module#CompleteprofilePageModule' },
+  { path: 'completecard', loadChildren: './completecard/completecard.module#CompletecardPageModule' },
+  { path: 'addprofilepic', loadChildren: './addprofilepic/addprofilepic.module#AddprofilepicPageModule' },
+
 ];
 
 @NgModule({

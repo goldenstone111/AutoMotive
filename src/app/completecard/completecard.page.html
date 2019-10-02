@@ -1,0 +1,46 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>completecard</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h3>Complete your card.</h3>
+        <p>Please fill in all forms with your card data</p>
+      </ion-col>
+      <ion-col>
+        <div class="strip">
+          <p>
+            Your card is handled by STRIPE Your details are secured and
+            protected.
+          </p>
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-label>Card Number</ion-label>
+        <ion-input placeholder="1234 5678 8765 4321"></ion-input>
+      </ion-col>
+      <ion-col size="4">
+        <ion-label>Valid Date</ion-label>
+        <ion-input></ion-input>
+       
+      </ion-col>
+      <ion-col size="4">
+        <ion-label></ion-label>
+      <ion-input></ion-input>
+    </ion-col>
+      
+      <ion-col size="4">
+          <ion-label>CVV</ion-label>
+          <ion-input placeholder=""></ion-input></ion-col>
+    </ion-row>
+
+    <ion-col size="6" text-center>
+        <ion-button class="authbtn" color="primary" routerLink="/login" routerDirection="forward" shape="round"> <ion-ripple-effect></ion-ripple-effect> CONTINUE </ion-button>
+      </ion-col>
+  </ion-grid>
+</ion-content>

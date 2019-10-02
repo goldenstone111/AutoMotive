@@ -21,8 +21,8 @@
           <p>
             Please enter your phone number for us to send a verification code.
           </p>
-          <div>
-            <img style="height:15vw;" src="../../assets/Phone.svg" alt="" />
+          <div class="ion-text-center">
+            <img style="height:15vw; margin: 3vw;" src="../../assets/Phone.svg" alt="" />
           </div>
         </ion-col>
 
@@ -48,6 +48,18 @@
               type="tel"
             ></ion-input>
           </ion-item>
+          <div class=" error2">   
+            <ng-container *ngFor="let validation of validation_messages.countryform">
+              <div class="error-message" *ngIf="loginForm.get('countryform').hasError(validation.type) && (loginForm.get('countryform').dirty || loginForm.get('countryform').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.mobile">
+              <div class="error-message" *ngIf="loginForm.get('mobile').hasError(validation.type) && (loginForm.get('mobile').dirty || loginForm.get('mobile').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
         </ion-col>
         <ion-col size="12" class=" ion-text-center headings">
           <ion-button

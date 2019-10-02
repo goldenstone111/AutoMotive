@@ -1,0 +1,275 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class=" error2">
+          <ng-container *ngFor="let validation of validation_messages.fname">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('fname').hasError(validation.type) &&
+                (profiledetail.get('fname').dirty ||
+                  profiledetail.get('fname').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.lname">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('lname').hasError(validation.type) &&
+                (profiledetail.get('lname').dirty ||
+                  profiledetail.get('lname').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.email">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('email').hasError(validation.type) &&
+                (profiledetail.get('email').dirty ||
+                  profiledetail.get('email').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.zip">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('zip').hasError(validation.type) &&
+                (profiledetail.get('zip').dirty ||
+                  profiledetail.get('zip').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.city">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('city').hasError(validation.type) &&
+                (profiledetail.get('city').dirty ||
+                  profiledetail.get('city').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.state">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('state').hasError(validation.type) &&
+                (profiledetail.get('state').dirty ||
+                  profiledetail.get('state').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.country">
+            <div
+              class="error-message"
+              *ngIf="
+                profiledetail.get('country').hasError(validation.type) &&
+                (profiledetail.get('country').dirty ||
+                  profiledetail.get('country').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.cnumber">
+            <div
+              class="error-message"
+              *ngIf="
+              carddetail.get('cnumber').hasError(validation.type) &&
+                (carddetail.get('cnumber').dirty ||
+                carddetail.get('cnumber').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.emonth">
+            <div
+              class="error-message"
+              *ngIf="
+              carddetail.get('emonth').hasError(validation.type) &&
+                (carddetail.get('emonth').dirty ||
+                carddetail.get('emonth').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.eyear">
+              <div
+                class="error-message"
+                *ngIf="
+                carddetail.get('eyear').hasError(validation.type) &&
+                  (carddetail.get('eyear').dirty ||
+                  carddetail.get('eyear').touched)
+                "
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.cvv">
+                <div
+                  class="error-message"
+                  *ngIf="
+                  carddetail.get('cvv').hasError(validation.type) &&
+                    (carddetail.get('cvv').dirty ||
+                    carddetail.get('cvv').touched)
+                  "
+                >
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="step == 1">
+    <form [formGroup]="profiledetail">
+      <ion-row>
+        <ion-col size="12">
+          <h3>Complete your profile.</h3>
+          <p>Please fill in all forms with your data</p>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>First Name</ion-label>
+          <ion-input type="text" formControlName="fname"></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>Last Name</ion-label>
+          <ion-input type="text" formControlName="lname"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Zip Code</ion-label>
+          <ion-input type="tel" formControlName="zip"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>City</ion-label>
+          <ion-input type="text" formControlName="city"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>State</ion-label>
+          <ion-input type="text" formControlName="state"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Country</ion-label>
+          <ion-item lines="none">
+            <ion-select slot="end" formControlName="country">
+              <ion-select-option
+                *ngFor="let c of countries"
+                value="{{ c.code }}"
+                >{{ c.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button
+            class="authbtn"
+            color="primary"
+            (click)="continue()"
+            shape="round"
+          >
+            <ion-ripple-effect></ion-ripple-effect> CONTINUE
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+  <ion-grid *ngIf="step == 2">
+    <form [formGroup]="carddetail">
+      <ion-row>
+        <ion-col size="12">
+          <h3>Complete your card.</h3>
+          <p>Please fill in all forms with your card data</p>
+        </ion-col>
+        <ion-col>
+          <div class="strip">
+            <p>
+              Your card is handled by STRIPE Your details are secured and
+              protected.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Card Number</ion-label>
+          <ion-input
+            formControlName="cnumber"
+            placeholder="1234 5678 8765 4321"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="2">
+          <ion-label>Valid Date</ion-label>
+          <ion-input formControlName="emonth"></ion-input>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label></ion-label>
+          <ion-input formControlName="eyear"></ion-input>
+        </ion-col>
+        <ion-col offset="2" size="4">
+          <ion-label>CVV</ion-label>
+          <ion-input placeholder="" formControlName="cvv"></ion-input>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button
+            class="authbtn"
+            color="primary"
+            (click)="continue()"
+            shape="round"
+          >
+            <ion-ripple-effect></ion-ripple-effect> CONTINUE
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+  <ion-grid *ngIf="step == 3">
+    <ion-row class="logo">
+      <ion-col size="12">
+        <h3>Add your photo</h3>
+        <p>Please add your photo to make it easier for people to find you.</p>
+      </ion-col>
+      <ion-col offset="4" size="8" class="ion-text-center">
+        <div class="logodiv">
+          <img [src]="isPicture ? picture : '../../assets/shapes.svg'" />
+        </div>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button
+          class="authbtn"
+          color="primary"
+          (click)="saveDetails()"
+          shape="round"
+        >
+          <ion-ripple-effect></ion-ripple-effect> CONTINUE
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

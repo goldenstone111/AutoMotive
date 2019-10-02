@@ -22,7 +22,7 @@
             Please enter your phone number for us to send a verification code.
           </p>
           <div>
-            <img style="height:15vw;" src="../../assets/Phone.svg" alt="" />
+            <img style="height:15vw; margin: 3vw;" src="../../assets/Phone.svg" alt="" />
           </div>
         </ion-col>
 
@@ -40,6 +40,7 @@
                 {{ c.name }}</ion-select-option
               >
             </ion-select>
+
             <ion-label color="primary">{{ country.dial_code }}</ion-label>
             <ion-input
               placeholder="Phone Number"
@@ -48,6 +49,20 @@
               type="tel"
             ></ion-input>
           </ion-item>
+          <!-- <div *ngIf="f.countryform.errors " class="invalid-feedback">
+            <div *ngIf="f.countryform.errors.required">
+              Please Select Country
+            </div>
+          </div>
+          <div *ngIf="f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required">Phone number is required</div>
+            <div *ngIf="f.mobile.errors.minLength">
+              Minimum length of phone number is 10.
+            </div>
+            <div *ngIf="f.mobile.errors.maxLength">
+              Miximum length of phone number is 10.
+            </div>
+          </div> -->
           <div class="terms">
             <ion-item lines="none">
               <ion-checkbox
@@ -69,6 +84,29 @@
               </p>
             </ion-item>
           </div>
+          <!-- <div *ngIf="f.terms.errors" class="invalid-feedback">
+            <div *ngIf="f.terms.errors.requiredTrue">
+              Please check the box above
+            </div>
+          </div> -->
+          <div class=" error2">   
+            <ng-container *ngFor="let validation of validation_messages.countryform">
+              <div class="error-message" *ngIf="signupForm.get('countryform').hasError(validation.type) && (signupForm.get('countryform').dirty || signupForm.get('countryform').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.mobile">
+              <div class="error-message" *ngIf="signupForm.get('mobile').hasError(validation.type) && (signupForm.get('mobile').dirty || signupForm.get('mobile').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.terms">
+              <div class="error-message" *ngIf="signupForm.get('terms').hasError(validation.type) && (signupForm.get('terms').dirty || signupForm.get('terms').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
         </ion-col>
         <ion-col size="12" class="ion-text-center headings">
           <ion-button
@@ -85,8 +123,15 @@
             <ion-ripple-effect></ion-ripple-effect> SIGN UP
           </ion-button>
         </ion-col>
-        <ion-col class="ion-text-center" *ngIf="!signupForm.valid" >
-          <ion-label class="already">Already have an account? </ion-label><ion-button fill="clear" class="ion-no-margin ion-no-padding" style="vertical-align: middle;" routerLink="/login" >Login</ion-button>
+        <ion-col class="ion-text-center" *ngIf="!signupForm.valid">
+          <ion-label class="already">Already have an account? </ion-label
+          ><ion-button
+            fill="clear"
+            class="ion-no-margin ion-no-padding"
+            style="vertical-align: middle;"
+            routerLink="/login"
+            >Login</ion-button
+          >
         </ion-col>
       </ion-row>
     </form>

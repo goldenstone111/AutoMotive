@@ -1,14 +1,20 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, AbstractControl, FormControl , Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {
+  FormBuilder,
+  FormGroup,
+  AbstractControl,
+  FormControl,
+  Validators
+} from "@angular/forms";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.page.html",
   styleUrls: ["./signup.page.scss"]
 })
 export class SignupPage implements OnInit {
-  initial:any;
-  country:any;
+  initial: any;
+  country: any;
   countries = [
     {
       name: "United States",
@@ -36,33 +42,43 @@ export class SignupPage implements OnInit {
       code: "DZ"
     }
   ];
+
   signupForm: FormGroup;
-  
-  constructor(private formBuilder: FormBuilder, public router: Router) {
-   
-  }
+  validation_messages = {
+    countryform: [{ type: "required", message: "Please Select Country." }],
+    mobile: [
+      { type: "required", message: "Phone number is required." },
+      { type: "maxlength", message: "Phone number must be at most 10 digit." },
+      { type: "minlength", message: "Phone number must be at least 10 digit." }
+    ],
+    terms: [{ type: "requiredTrue", message: "Please check the box." }]
+  };
 
-
+  constructor(private formBuilder: FormBuilder, public router: Router) {}
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      countryform: new FormControl('',[Validators.required]),
-      mobile: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
-      terms: new FormControl ('', [Validators.requiredTrue])
+      countryform: new FormControl("", [Validators.required]),
+      mobile: new FormControl("", [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(10)
+      ]),
+      terms: new FormControl("", [Validators.requiredTrue])
     });
     this.signupForm.valueChanges.subscribe(console.log);
-    
-    this.country=this.countries[0];
-    console.log("Initial country ", this.country );
-    
+
+    this.country = this.countries[0];
+    console.log("Initial country ", this.country);
   }
-  setCountryCode(id){
+
+  // get f() { return this.signupForm.controls; }
+  setCountryCode(id) {
     console.log(id);
-    this.country=this.countries[id];
+    this.country = this.countries[id];
     console.log("select country", this.country);
-    
   }
-  register(){
-    this.router.navigate(['/otpverify']);
+  register() {
+    this.router.navigate(["/otpverify"]);
   }
 }
