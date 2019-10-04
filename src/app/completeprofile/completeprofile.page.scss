@@ -7,13 +7,38 @@ ion-grid {
   ion-label {
     font-weight: 600;
   }
-  ion-input, ion-item{
-    width: 100%;
-    height: 50px;
+  ion-input, .cselect, ion-item{
+    height: 12.5vw;
     font-size: 5vw;
     border-radius: 3vw;
     margin: 2vw 0vw !important;
     padding-left: 2vw !important;
     border: solid 0.5px var(--font-color);
+  }
+  .cselect{
+    width: 45%;
+    padding-right: 5vw;  
+    padding-top: 3vw;
+    display: inline-flex;
+    margin-right: 2vw !important;
+    border: solid 0.5px var(--theme-color) !important;
+  }
+  .cvv{
+    width: 75%;
+    float:right;
+    border: solid 0.5px var(--theme-color) !important;
+  }
+  .strip{
+    border-radius: 4vw;
+    padding: 4vw;
+    background: #6261611a;
+    display: inline-flex;
+    p{
+      font-size: 3.7vw;
+      padding-left: 2vw;
+    }
+    img{
+      width: 15vw;
+    }
   }
 }

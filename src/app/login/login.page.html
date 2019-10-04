@@ -31,7 +31,7 @@
             <ion-select
               formControlName="countryform"
               (ionChange)="setCountryCode(c)"
-              [(ngModel)]="c"
+              
             >
               <ion-select-option
                 *ngFor="let c of countries; let i = index"

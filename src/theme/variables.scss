@@ -76,11 +76,17 @@
   ion-item {
     --padding-start: 0px;
   }
-
+  ion-select{
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    font-family: var(--theme-font);
+    color: var(--font-color);
+    padding: 3px;
+  }
   .logo {
     .logodiv {
-      width: 30vw;
-      height: 30vw;
+      width: 44vw;
       img {
         height: 100%;
         width: 100%;
@@ -116,18 +122,18 @@
   }
   .authbtn {
     --background: transparent;
-    margin-top: 10vw;
+    margin-top: 5vw;
     border-radius: 8vw;
     --border-radius: 8vw;
     width: 40vw;
     font-size: 5vw;
     font-family: var(--theme-font);
+    height: 12vw;
   }
 
   //validation message
 
   .error2 {
-    border-top: 1px solid var(--theme-color);
     margin: 2vw 6vw;
     margin-top: 5vw !important;
     text-align: left;
@@ -141,4 +147,10 @@
       letter-spacing: 0.5px;
     }
   }
+ ion-title, ion-header, ion-toolbar{
+   color:var(--theme-color);
+ }
+ ion-button:focus {
+  outline:none !important;
+ }
 }

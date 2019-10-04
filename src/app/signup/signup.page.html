@@ -31,7 +31,7 @@
             <ion-select
               formControlName="countryform"
               (ionChange)="setCountryCode(c)"
-              [(ngModel)]="c"
+             
             >
               <ion-select-option
                 *ngFor="let c of countries; let i = index"
@@ -49,20 +49,6 @@
               type="tel"
             ></ion-input>
           </ion-item>
-          <!-- <div *ngIf="f.countryform.errors " class="invalid-feedback">
-            <div *ngIf="f.countryform.errors.required">
-              Please Select Country
-            </div>
-          </div>
-          <div *ngIf="f.mobile.errors" class="invalid-feedback">
-            <div *ngIf="f.mobile.errors.required">Phone number is required</div>
-            <div *ngIf="f.mobile.errors.minLength">
-              Minimum length of phone number is 10.
-            </div>
-            <div *ngIf="f.mobile.errors.maxLength">
-              Miximum length of phone number is 10.
-            </div>
-          </div> -->
           <div class="terms">
             <ion-item lines="none">
               <ion-checkbox
@@ -84,11 +70,7 @@
               </p>
             </ion-item>
           </div>
-          <!-- <div *ngIf="f.terms.errors" class="invalid-feedback">
-            <div *ngIf="f.terms.errors.requiredTrue">
-              Please check the box above
-            </div>
-          </div> -->
+
           <div class=" error2">   
             <ng-container *ngFor="let validation of validation_messages.countryform">
               <div class="error-message" *ngIf="signupForm.get('countryform').hasError(validation.type) && (signupForm.get('countryform').dirty || signupForm.get('countryform').touched)">

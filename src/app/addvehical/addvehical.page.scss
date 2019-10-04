@@ -1,0 +1,22 @@
+ion-grid{
+    color: var(--font-color);
+    h3{font-weight: 600; padding-left: 3vw; }
+    padding: 0vw 3vw;
+    ion-item{
+   
+        color: var(--font-color);
+        height :15vw;
+    }
+    .header{
+        z-index: 99;
+        position: fixed;
+        top: 12vw;
+        background: white;
+    }
+    .data{
+        margin-top:15vw;
+    }
+    .data2{
+        margin-top:27vw;
+    }
+}

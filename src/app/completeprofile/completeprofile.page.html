@@ -5,11 +5,11 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div class=" error2">
+<ion-content class="ion-no-padding">
+  <ion-grid  class="ion-no-padding" >
+    <ion-row  class="ion-no-padding">
+      <ion-col  class="ion-no-padding">
+         <div class="error2"> 
           <ng-container *ngFor="let validation of validation_messages.fname">
             <div
               class="error-message"
@@ -98,9 +98,9 @@
             <div
               class="error-message"
               *ngIf="
-              carddetail.get('cnumber').hasError(validation.type) &&
+                carddetail.get('cnumber').hasError(validation.type) &&
                 (carddetail.get('cnumber').dirty ||
-                carddetail.get('cnumber').touched)
+                  carddetail.get('cnumber').touched)
               "
             >
               {{ validation.message }}
@@ -110,38 +110,37 @@
             <div
               class="error-message"
               *ngIf="
-              carddetail.get('emonth').hasError(validation.type) &&
+                carddetail.get('emonth').hasError(validation.type) &&
                 (carddetail.get('emonth').dirty ||
-                carddetail.get('emonth').touched)
+                  carddetail.get('emonth').touched)
               "
             >
               {{ validation.message }}
             </div>
           </ng-container>
           <ng-container *ngFor="let validation of validation_messages.eyear">
-              <div
-                class="error-message"
-                *ngIf="
+            <div
+              class="error-message"
+              *ngIf="
                 carddetail.get('eyear').hasError(validation.type) &&
-                  (carddetail.get('eyear').dirty ||
+                (carddetail.get('eyear').dirty ||
                   carddetail.get('eyear').touched)
-                "
-              >
-                {{ validation.message }}
-              </div>
-            </ng-container>
-            <ng-container *ngFor="let validation of validation_messages.cvv">
-                <div
-                  class="error-message"
-                  *ngIf="
-                  carddetail.get('cvv').hasError(validation.type) &&
-                    (carddetail.get('cvv').dirty ||
-                    carddetail.get('cvv').touched)
-                  "
-                >
-                  {{ validation.message }}
-                </div>
-              </ng-container>
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let validation of validation_messages.cvv">
+            <div
+              class="error-message"
+              *ngIf="
+                carddetail.get('cvv').hasError(validation.type) &&
+                (carddetail.get('cvv').dirty || carddetail.get('cvv').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
         </div>
       </ion-col>
     </ion-row>
@@ -211,30 +210,37 @@
         </ion-col>
         <ion-col>
           <div class="strip">
+            <img src="../../assets/lock.svg" alt="">
             <p>
-              Your card is handled by STRIPE Your details are secured and
+              Your card is handled by <strong> STRIPE</strong><sup>TM </sup> Your details are secured and
               protected.
             </p>
           </div>
         </ion-col>
         <ion-col size="12">
           <ion-label>Card Number</ion-label>
-          <ion-input
+          <ion-input style=" border: solid 0.5px var(--theme-color)"
             formControlName="cnumber"
             placeholder="1234 5678 8765 4321"
           ></ion-input>
         </ion-col>
-        <ion-col size="2">
-          <ion-label>Valid Date</ion-label>
-          <ion-input formControlName="emonth"></ion-input>
-        </ion-col>
-        <ion-col size="4">
-          <ion-label></ion-label>
-          <ion-input formControlName="eyear"></ion-input>
-        </ion-col>
-        <ion-col offset="2" size="4">
-          <ion-label>CVV</ion-label>
-          <ion-input placeholder="" formControlName="cvv"></ion-input>
+        <ion-col size="12">
+          <ion-label>Valid Date</ion-label> <ion-label style="float:right;padding-right:2vw;">CVV</ion-label>
+          <ion-row align-items: baseline>
+            <ion-col size="8" class="ion-no-padding">
+              <div>
+                <ion-select [interfaceOptions]="selectHeader" placeholder="Month" class="cselect" slot="end" formControlName="emonth">
+                  <ion-select-option  *ngFor="let m of monthlist;">{{m}}</ion-select-option>
+                </ion-select>
+                <ion-select placeholder="Year" [interfaceOptions]="selectHeader" class="cselect" slot="end" formControlName="eyear">
+                  <ion-select-option  *ngFor="let y of yearlist;">20{{y}}</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-col>
+            <ion-col size="4" class="ion-no-padding">
+              <ion-input placeholder="" formControlName="cvv" class="cvv"></ion-input>
+            </ion-col>
+          </ion-row>
         </ion-col>
         <ion-col size="12" class="ion-text-center">
           <ion-button
@@ -255,12 +261,13 @@
         <h3>Add your photo</h3>
         <p>Please add your photo to make it easier for people to find you.</p>
       </ion-col>
-      <ion-col offset="4" size="8" class="ion-text-center">
-        <div class="logodiv">
-          <img [src]="isPicture ? picture : '../../assets/shapes.svg'" />
+      <ion-col offset="3" size="8" class="ion-text-center">
+        <div class="logodiv" (click)="UploadOption()">
+            <ion-ripple-effect></ion-ripple-effect>
+          <img [src]="isPicture ? Picture : '../../assets/camerawithtext.svg'" />
         </div>
       </ion-col>
-      <ion-col size="12" class="ion-text-center">
+      <ion-col size="12" class="ion-text-center" style="margin-top: 20vw">
         <ion-button
           class="authbtn"
           color="primary"
