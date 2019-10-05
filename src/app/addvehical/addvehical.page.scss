@@ -10,7 +10,7 @@ ion-grid{
     .header{
         z-index: 99;
         position: fixed;
-        top: 12vw;
+        top: 15vw;
         background: white;
     }
     .data{
@@ -19,4 +19,7 @@ ion-grid{
     .data2{
         margin-top:27vw;
     }
+}
+ion-button{
+    height:12vw;
 }

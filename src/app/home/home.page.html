@@ -1,19 +1,105 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button style="width: 8vw;" (click)="filter()">
-        <img src="../../assets/home/filter.svg" alt="" />
+      <ion-button style="width: 10vw;" (click)="filter()">
+        <img src="../../assets/home/filter.svg" alt="" style="width: -webkit-fill-available;" />
       </ion-button>
     </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid>
+  <ion-grid class="ion-no-padding">
     <ion-row>
-      <ion-col> 
-          
+      <ion-col class="ion-no-padding">
+        <div id="map_canvas" class="ion-no-padding"></div>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+<ion-card class="ion-no-margin">
+    <ion-slides [options]="slideOpts">
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/washcar.svg" alt="" />
+          <p>Car Wash</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/tyre_check.svg" alt="" />
+          <p>Tyre Check</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/maintenance.svg" alt="" />
+          <p>Engine Cleaner</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/oil_change.svg" alt="" />
+          <p>Oil Change</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/washcar.svg" alt="" />
+          <p>Car Wash</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/tyre_check.svg" alt="" />
+          <p>Tyre Check</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/maintenance.svg" alt="" />
+          <p>Engine Cleaner</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slideicon">
+          <img src="../../assets/home/oil_change.svg" alt="" />
+          <p>Oil Change</p>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="music" *ngIf="isActive1">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-button shape="round" fill="outline">
+        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+      </ion-button>
+    </ion-tab-button>
+    <ion-tab-button tab="movies" *ngIf="isActive2">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-button shape="round" fill="outline">
+        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+      </ion-button>
+    </ion-tab-button>
+    <ion-tab-button tab="games" *ngIf="isActive">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-button shape="round" fill="outline3">
+        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+      </ion-button>
+    </ion-tab-button>
+    <!-- not active buttons without ring and color -->
+    <ion-tab-button tab="music" *ngIf="!isActive1">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="movies" *ngIf="!isActive2">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="games" *ngIf="!isActive">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+

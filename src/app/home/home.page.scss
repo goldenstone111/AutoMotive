@@ -1,0 +1,35 @@
+#map_canvas {
+    width: 100%;
+    height: -webkit-fill-available;
+  }
+  ion-slide{
+    display: inline;
+    .slideicon{
+      height: 25vw;
+      width: 100%;
+      text-align: -webkit-center;
+      padding-left: 2vw;
+    p{
+      padding-top: 1vw;
+      margin: 0px;
+      font-size: 3.2vw
+    }
+    img{
+      margin-top: 3vw;
+      height:15vw;
+    }
+    }
+  }
+  ion-tab-bar {  
+    height: 15vw;
+    
+    ion-button{
+      height: 14vw;
+      width: 14vw;
+    }
+    ion-icon{
+      z-index: 99;
+      position: fixed;
+      font-size: 10vw;
+    }
+  }

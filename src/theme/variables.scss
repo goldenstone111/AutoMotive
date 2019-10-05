@@ -86,11 +86,12 @@
   }
   .logo {
     .logodiv {
-      width: 44vw;
+      width: 30vw;
+      height: 30vw;
       img {
         height: 100%;
         width: 100%;
-        object-fit: fill;
+        object-fit: cover;
         border-radius: 50%;
       }
     }
@@ -149,6 +150,7 @@
   }
  ion-title, ion-header, ion-toolbar{
    color:var(--theme-color);
+   z-index: 999;
  }
  ion-button:focus {
   outline:none !important;
