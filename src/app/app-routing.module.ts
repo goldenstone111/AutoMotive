@@ -10,6 +10,10 @@ const routes: Routes = [
   { path: 'otpverify', loadChildren: './otpverify/otpverify.module#OtpverifyPageModule' },
   { path: 'completeprofile', loadChildren: './completeprofile/completeprofile.module#CompleteprofilePageModule' },  { path: 'addvehical', loadChildren: './addvehical/addvehical.module#AddvehicalPageModule' },
   { path: 'vehicals', loadChildren: './vehicals/vehicals.module#VehicalsPageModule' },
+  { path: 'filter', loadChildren: './filter/filter.module#FilterPageModule' },
+  { path: 'services', loadChildren: './services/services.module#ServicesPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+  { path: 'help', loadChildren: './help/help.module#HelpPageModule' },
 
   
 

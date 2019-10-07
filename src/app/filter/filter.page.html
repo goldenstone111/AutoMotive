@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-icon src="../../assets/home/location_pin.svg"></ion-icon>
+      location of that area
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-icon src="../../assets/distance.svg"></ion-icon>
+      <ion-label>Distance</ion-label>
+      <ion-label style="float:right;">30km</ion-label>
+      <ion-range min="5" mode="ios" max="30" step="5" value="10" snaps> </ion-range>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="heading"> Sub Categories</ion-label>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-chip><ion-ripple-effect></ion-ripple-effect>Car Wash</ion-chip>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-chip><ion-ripple-effect></ion-ripple-effect>Car Wash</ion-chip>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-chip><ion-ripple-effect></ion-ripple-effect>Car Wash</ion-chip>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-chip><ion-ripple-effect></ion-ripple-effect>Car Wash</ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="heading"> Price </ion-label>
+      </ion-col>
+      <ion-col size="2" class="ion-align-self-center">
+        <ion-label>From</ion-label>
+      </ion-col>
+      <ion-col size="5" class="ion-text-center">
+        <ion-chip> <ion-ripple-effect></ion-ripple-effect> $ 1500 </ion-chip>
+      </ion-col>
+      <ion-col size="5" class="ion-text-center">
+        <ion-chip><ion-ripple-effect></ion-ripple-effect> $ 1000</ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-text-center">
+        <ion-button fill="outline" expand="block" shape="round">
+          <ion-ripple-effect></ion-ripple-effect>
+          Reset
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center" >
+        <ion-button fill="outline" expand="block" shape="round">
+          <ion-ripple-effect></ion-ripple-effect>
+          Apply
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

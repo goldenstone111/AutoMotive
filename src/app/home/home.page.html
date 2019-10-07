@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button style="width: 10vw;" (click)="filter()">
+      <ion-button style="width: 10vw;" routerLink="/filter">
         <img src="../../assets/home/filter.svg" alt="" style="width: -webkit-fill-available;" />
       </ion-button>
     </ion-buttons>
@@ -70,36 +70,19 @@
     </ion-slides>
   </ion-card>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="music" *ngIf="isActive1">
+    <ion-tab-button routerLink="/services" >
       <ion-ripple-effect></ion-ripple-effect>
-      <ion-button shape="round" fill="outline">
+        <ion-icon src="../../assets/home/services.svg" alt=""></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="#">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-button shape="round"  fill="outline">
         <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
       </ion-button>
     </ion-tab-button>
-    <ion-tab-button tab="movies" *ngIf="isActive2">
+    <ion-tab-button routerLink="/profile" >
       <ion-ripple-effect></ion-ripple-effect>
-      <ion-button shape="round" fill="outline">
-        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
-      </ion-button>
-    </ion-tab-button>
-    <ion-tab-button tab="games" *ngIf="isActive">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-button shape="round" fill="outline3">
-        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
-      </ion-button>
-    </ion-tab-button>
-    <!-- not active buttons without ring and color -->
-    <ion-tab-button tab="music" *ngIf="!isActive1">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="movies" *ngIf="!isActive2">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="games" *ngIf="!isActive">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+        <ion-icon src="../../assets/home/profile.svg" alt=""></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
 

@@ -84,8 +84,5 @@ export class HomePage  {
   //     console.log("error getting location",err.error_message);
   //   });
   // }
-  demo(){
-    console.log("hello");
-    
-  }
+  
 }

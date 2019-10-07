@@ -155,4 +155,18 @@
  ion-button:focus {
   outline:none !important;
  }
+
+ ion-tab-bar {  
+  height: 15vw;
+  
+  ion-button{
+    height: 14vw;
+    width: 14vw;
+  }
+  ion-icon{
+    z-index: 99;
+    position: fixed;
+    font-size: 10vw;
+  }
+}
 }

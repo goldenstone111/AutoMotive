@@ -1,0 +1,25 @@
+ion-range{
+    --knob-size:7vw;
+    --height:4vw;
+}
+.heading{
+    
+    font-size: 5vw;
+    padding :3vw;
+}
+ion-chip{
+    background: white;
+    padding: 6vw;
+    box-shadow: 1vw 0vw 5vw 2vw #eceaea;
+    border-radius: 4vw;
+    margin: 4vw;
+}
+ion-row{
+    color: var(--font-color);
+    font-family: var(--thme-font);
+    font-weight: 600;
+}
+ion-button{
+    margin-top: 5vw;
+    height: 12vw;
+}

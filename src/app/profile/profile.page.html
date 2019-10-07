@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-card>
+          <ion-row>
+            <ion-col size="4"
+              ><div class="profilediv">
+                <img src="../../assets/shapes.svg" alt="" /></div
+            ></ion-col>
+            <ion-col size="8" class="ion-align-self-center">
+              <p class="heading">Navin Sharma</p>
+              <p class="heading">8952035898</p>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <ion-list>
+          <!-- <ion-item
+            *ngFor="let item of list"
+            lines="none"
+            (click)="openPage(item)"
+          > -->
+            <ion-card *ngFor="let item of list"  (click)="openPage(item)">
+              <ion-card-content>
+                <img [src]="item.icon" />
+                <p class="title">{{ item.title }}</p>
+              </ion-card-content>
+            </ion-card>
+          <!-- </ion-item> -->
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/services">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon src="../../assets/home/services.svg" alt=""></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="#">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-button shape="round" fill="outline">
+      <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+    </ion-button>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/profile">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon src="../../assets/home/profile.svg" alt=""></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

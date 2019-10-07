@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button ></ion-back-button>
-      <!-- <ion-button *ngIf="isBack" (click)="back()"> back</ion-button> -->
+      <ion-back-button *ngIf="!isBack"></ion-back-button>
+      <ion-button *ngIf="isBack" (click)="back()"> back</ion-button>
     </ion-buttons>
     <ion-title>Add Vehical</ion-title>
   </ion-toolbar>
@@ -14,10 +14,14 @@
       <ion-col class="header" size="12">
         <h3>What year is your car</h3>
       </ion-col>
-      <ion-col  class="data" size="12">
+      <ion-col class="data" size="12">
         <ion-list>
-          <ion-item *ngFor="let year of yearlist" (click)="setData(year)">
-            <ion-ripple-effect></ion-ripple-effect>
+          <ion-item
+            *ngFor="let year of yearlist"
+            button
+            (click)="setData(year)"
+          >
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
             &nbsp;{{ year }}
           </ion-item>
         </ion-list>
@@ -25,15 +29,23 @@
     </ion-row>
 
     <ion-row *ngIf="step == 2">
-      <ion-col  class="header" size="12">
+      <ion-col class="header" size="12">
         <h3>What is the make of your car?</h3>
-        <ion-searchbar class="ion-no-padding" mode="md" placeholder="Search Makes "></ion-searchbar>  
+        <ion-searchbar
+          class="ion-no-padding"
+          mode="md"
+          placeholder="Search Makes "
+        ></ion-searchbar>
       </ion-col>
-      
-      <ion-col  class="data2" size="12">
+
+      <ion-col class="data2" size="12">
         <ion-list>
-          <ion-item *ngFor="let company of companylist" (click)="setData(company)">
-            <ion-ripple-effect></ion-ripple-effect>
+          <ion-item
+            *ngFor="let company of companylist"
+            (click)="setData(company)"
+            button
+          >
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
             &nbsp;{{ company }}
           </ion-item>
         </ion-list>
@@ -41,54 +53,61 @@
     </ion-row>
 
     <ion-row *ngIf="step == 3">
-      <ion-col  class="header" size="12">
+      <ion-col class="header" size="12">
         <h3>What is the model?</h3>
-        <ion-searchbar class="ion-no-padding" mode="md" placeholder="Search Makes "></ion-searchbar>  
+        <ion-searchbar
+          class="ion-no-padding"
+          mode="md"
+          placeholder="Search Makes "
+        ></ion-searchbar>
       </ion-col>
       <ion-col class="data2" size="12">
         <ion-list>
-          <ion-item *ngFor="let model of modellist" (click)="setData(model)">
-            <ion-ripple-effect></ion-ripple-effect>
+          <ion-item *ngFor="let model of modellist" button (click)="setData(model)">
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
             &nbsp;{{ model }}
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="step == 4">
-      <ion-col  class="header" size="12">
+      <ion-col class="header" size="12">
         <h3>..and the color?</h3>
       </ion-col>
       <ion-col class="data" size="12">
         <ion-list>
-          <ion-item *ngFor="let color of colorlist" (click)="setData(color)">
-            <ion-ripple-effect></ion-ripple-effect>
+          <ion-item *ngFor="let color of colorlist" button (click)="setData(color)">
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
             &nbsp;{{ color }}
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="step == 5">
-      <ion-col  class="header" size="12">
+      <ion-col class="header" size="12">
         <h3>What kind of fuel does your modelname use?</h3>
       </ion-col>
       <ion-col class="data2" size="12">
         <ion-list>
-          <ion-item *ngFor="let fuel of fuellist" (click)="setData(fuel)">
-            <ion-ripple-effect></ion-ripple-effect>
+          <ion-item *ngFor="let fuel of fuellist" button (click)="setData(fuel)">
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
             &nbsp;{{ fuel }}
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="step == 6">
-      <ion-col  class="header" size="12">
+      <ion-col class="header" size="12">
         <h3>What is the license plate #?</h3>
       </ion-col>
       <ion-col class="data" size="12">
-        <ion-item>
-            <ion-input type="text"  placeholder="License plate number "></ion-input>
+        <ion-item >
+          <ion-input
+            type="text"
+            placeholder="License plate number "
+          ></ion-input>
         </ion-item>
-        <ion-button fill="outline" shape="round" routerLink="/home" >
+        <ion-button fill="outline" shape="round" routerLink="/home">
           SKIP FOR THIS NOW
         </ion-button>
         <ion-button fill="outline" shape="round" (click)="saveDetails()">
