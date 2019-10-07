@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pagename }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
+            <ion-label> Nickname </ion-label>
+            <ion-input [(ngModel)]="data.nickname"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label> Make </ion-label>
+            <ion-input [(ngModel)]="data.make"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label> License </ion-label>
+            <ion-input [(ngModel)]="data.license"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label> Model Number </ion-label>
+            <ion-input [(ngModel)]="data.modelnumber"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label> Color </ion-label>
+            <ion-input [(ngModel)]="data.color"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label> Fual Type </ion-label>
+            <ion-input [(ngModel)]="data.fualtype"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list> </ion-list>
+</ion-content>
+<ion-toolbar class="ion-text-center toolheight">
+  <ion-button shape="round" (click)="deletevehicle()" color="danger">
+    <ion-ripple-effect> </ion-ripple-effect>
+    <img src="../../assets/white_car.svg" alt="" /> &nbsp; DELETE VEHICLE
+  </ion-button>
+</ion-toolbar>

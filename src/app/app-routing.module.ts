@@ -14,6 +14,12 @@ const routes: Routes = [
   { path: 'services', loadChildren: './services/services.module#ServicesPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'help', loadChildren: './help/help.module#HelpPageModule' },
+  { path: 'transactions', loadChildren: './transactions/transactions.module#TransactionsPageModule' },
+  { path: 'payments', loadChildren: './payments/payments.module#PaymentsPageModule' },
+  { path: 'address', loadChildren: './address/address.module#AddressPageModule' },
+  { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
+  { path: 'vehicledetails', loadChildren: './vehicledetails/vehicledetails.module#VehicledetailsPageModule' },
+  { path: 'recipt', loadChildren: './recipt/recipt.module#ReciptPageModule' },
 
   
 

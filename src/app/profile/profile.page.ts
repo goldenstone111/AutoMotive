@@ -28,7 +28,7 @@ export class ProfilePage implements OnInit {
         icon: "../../assets/home/payment.svg"
       },
       {
-        title: "Vehicals",
+        title: "Vehicles",
         component: "/vehicals",
         icon: "../../assets/home/vehical.svg"
       },

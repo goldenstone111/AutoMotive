@@ -1,0 +1,27 @@
+ion-card{
+    height: 85vh;
+    border-radius: 0px;
+}
+ion-card-content{
+    padding: 3vw;
+}
+ion-col{
+    font-family: var(--theme-font);
+    color:var(--font-color);
+    
+    align-self:center;
+    img{
+        width: 5vw;
+    }
+    .heading{
+        font-size: 5.3vw;
+        font-weight: 600;
+    }
+    .subheading{
+        font-size:4.2vw;
+        font-weight: 600;
+    }
+}
+.value{
+    text-align: right;
+}

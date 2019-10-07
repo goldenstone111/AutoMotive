@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addvehical.page.scss'],
 })
 export class AddvehicalPage implements OnInit {
+  backarrow="<";
   yearlist:any=[];
   companylist:any=[1,2,3,4,5,6,7,8,9,0,12,21,3,234,354,354,45,453,42];
   modellist:any=[1,2,3,4,5,6,7,8,9,0,12,21,3,234,354,354,45,453,42];

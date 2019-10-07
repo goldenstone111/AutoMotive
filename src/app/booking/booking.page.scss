@@ -1,0 +1,24 @@
+.bottombar{
+    width: 6vw;
+    height: 2.3vw;
+    background: var(--theme-color);
+    border-radius: 6vw;
+    margin-left: 11vw;
+}
+.title, .time, .id{
+    color: var(--font-color);
+    font-family: var(--theme-font);
+    font-size: 3.5vw;
+} 
+.title{
+    font-size: 4vw;
+    text-transform: capitalize
+}
+ion-col{
+    align-self: center;
+}
+ion-card{
+ padding : 2vw;
+ margin: 3vw;
+ border-radius: 0px;
+}
