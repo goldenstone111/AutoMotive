@@ -1,9 +1,67 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>payments</ion-title>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payments</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="9"     style="align-self: flex-end;">
+                <p>**** **** **** 4821  </p>
+              </ion-col>
+              <ion-col size="3">
+                <img src="../../assets/lock.svg" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-row>
+            <ion-col size="12" class="ion-no-padding">
+              <ion-button expand="full" class="delete">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-icon name="trash"></ion-icon>
+                Delete
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
 
+        <ion-card>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="9"     style="align-self: flex-end;">
+                <p>**** **** **** 7845  </p>
+              </ion-col>
+              <ion-col size="3">
+                <img src="../../assets/lock.svg" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-row>
+            <ion-col size="12" class="ion-no-padding">
+              <ion-button expand="full" class="delete">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-icon name="trash"></ion-icon>
+                Delete
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
 </ion-content>
+<ion-toolbar class="ion-text-center toolheight">
+  <ion-button shape="round" routerLink="/completeprofile">
+    <ion-ripple-effect>
+    </ion-ripple-effect>
+    <img src="../../assets/home/card.svg" alt="" /> &nbsp; ADD CARD
+  </ion-button>
+</ion-toolbar>

@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
   { path: 'vehicledetails', loadChildren: './vehicledetails/vehicledetails.module#VehicledetailsPageModule' },
   { path: 'recipt', loadChildren: './recipt/recipt.module#ReciptPageModule' },
+  { path: 'newaddress', loadChildren: './newaddress/newaddress.module#NewaddressPageModule' },
+  { path: 'availablestore', loadChildren: './availablestore/availablestore.module#AvailablestorePageModule' },
 
   
 

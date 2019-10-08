@@ -1,0 +1,40 @@
+
+ion-card{
+    margin: 6vw 3vw;
+    border-radius: 0px;
+    ion-card-content{
+        padding: 3vw 8vw 6vw 8vw;
+        img{
+            width: 7vw;
+        }
+        p{
+            font-size: 3.7vw;
+        }
+    }
+    ion-button{
+        --color:var(--theme-color-danger);
+        --background: #ffffff;
+        border: 1px solid #cccacabd;
+        margin: 0px;
+        font-size: 4.7vw;
+        font-family: 'Poppins', sans-serif;
+        font-weight: normal;
+        ion-icon{
+            font-size: 5.5vw;
+            padding: 0vw 1vw;
+        }
+    }
+}
+.toolheight{
+    height: 30vw;
+    ion-button{
+        width: 60%;
+        letter-spacing: 0.2px;
+        font-weight: 300;
+        font-size:5vw;
+        img{
+            width: 8vw;
+        }
+    }
+    
+}
