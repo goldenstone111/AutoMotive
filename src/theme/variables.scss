@@ -70,7 +70,7 @@
   --theme-color: #08cebb;
   --theme-color-danger: #cb0000;
   --font-color: #626161;
-  --theme-font: "Open Sans", sans-serif;
+  --theme-font: 'Poppins', sans-serif;
   --disbale-color: #626161;
   //global css
   ion-item {
@@ -118,7 +118,7 @@
       font-family: var(--theme-font);
       color: var(--font-color);
       font-family: "open sans", sans-serif;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
   .authbtn {
@@ -143,13 +143,15 @@
       font-size: 1em;
       color: var(--theme-color-danger);
       font-family: var(--theme-font);
-      font-weight: 500;
+      font-weight: 400;
       text-transform: capitalize;
       letter-spacing: 0.5px;
     }
   }
  ion-title, ion-header, ion-toolbar{
    color:var(--theme-color);
+   font-family: var(--theme-font);
+   font-weight: 500;
    z-index: 999;
  }
  ion-button:focus {
@@ -169,4 +171,6 @@
     font-size: 10vw;
   }
 }
+--ion-font-family:var(--theme-font);
+--ion-text-color: var(--font-color);
 }

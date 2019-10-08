@@ -15,13 +15,20 @@ ion-col{
     }
     .heading{
         font-size: 5.3vw;
-        font-weight: 600;
+        font-weight: 500;
     }
     .subheading{
         font-size:4.2vw;
-        font-weight: 600;
+        font-weight: 500;
+        vertical-align: sub;
     }
 }
 .value{
     text-align: right;
+}
+.billData{
+    margin: 5vw 0vw;
+    p{
+        padding: 1vw 0vw;
+    }
 }

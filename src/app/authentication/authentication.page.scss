@@ -21,7 +21,7 @@ ion-grid{
 
     .authbtn{
         font-family: var(--theme-font);
-        font-weight: 600;
+        font-weight: 500;
         font-size: 4.5vw;
         width:35vw;
     }
@@ -29,7 +29,10 @@ ion-grid{
         margin-top: 10vh;
     }
     .authbtns{
-        margin-top: 40vh;
+        // margin-top: 40vh;
+        position: fixed;
+        bottom: 13vw;
+        width: 95%;
     }
 }
 
