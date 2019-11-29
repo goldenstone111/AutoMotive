@@ -1,0 +1,78 @@
+<ion-header class="nolinesheader">
+  <ion-toolbar class="nolinestoolbar">
+    <ion-buttons slot="start">
+      <ion-back-button icon="ios-arrow-back" mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col offset="3" size="8" class="ion-text-center">
+        <div class="logodiv" (click)="UploadOption()">
+          <ion-ripple-effect></ion-ripple-effect>
+          <img
+            [src]="isPicture ? Picture : '../../assets/camerawithtext.svg'"
+          />
+        </div>
+        <ion-icon (click)="UploadOption()" class="editProfile" name="md-create"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="updateProfile">
+      <ion-row>
+        <ion-col size="12">
+          <h3>Update your profile.</h3>
+            </ion-col>
+        <ion-col size="12">
+          <ion-label>First Name</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="data.customer_fname"
+            placeholder="First Name"
+            formControlName="fname"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Last Name</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="data.customer_lname"
+            placeholder="Last Name"
+            formControlName="lname"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Email</ion-label>
+          <ion-input
+            type="email"
+            [(ngModel)]="data.customer_email"
+            placeholder="Enter Email"
+            formControlName="email"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+            <ion-label>Phone Number</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="data.user_phone"
+              readonly
+              formControlName="mobile"
+            ></ion-input>
+          </ion-col>
+          <ion-col size="12" class="ion-text-center" >
+              <ion-button
+              style="margin-top: 10vw;;"
+                class="authbtn"
+                color="primary"
+                (click)="UpdateProfileDetails()"
+                shape="round"
+              >
+                <ion-ripple-effect></ion-ripple-effect> CONTINUE
+              </ion-button>
+            </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

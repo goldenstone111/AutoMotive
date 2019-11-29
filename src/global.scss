@@ -37,3 +37,23 @@ ion-searchbar{
         
     }
 }
+.my-custom-modal-css .modal-wrapper {
+   height: 70%;
+   top: 30%;
+   position: absolute; 
+   display: block;  
+   border-top-left-radius: 5vw;
+   border-top-right-radius: 5vw;
+}
+.customActionSheet{
+    .action-sheet-title{
+        text-align: center;
+        font-size: 5vw;
+        font-weight: 600;
+        color: var(--theme-color);
+        .action-sheet-button {
+            color: var(--theme-color) !important;
+            font-weight: 500 !important;
+        }
+    }
+}

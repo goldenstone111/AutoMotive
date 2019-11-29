@@ -5,10 +5,10 @@ ion-card {
     
     img{
         width: 100%;
-        height: 100%;
+        height: 45vw;
     }
     .card-title {
-        padding: 0px;
+        padding: 1vw 2vw;
         position: absolute;
         top: 60%;
         font-family: var(--theme-font);
@@ -16,6 +16,12 @@ ion-card {
         font-weight: 500;
         color: #fff;
         text-shadow: 3px 4px 13px #000000;
+        p{
+            margin:0px;
+        }
+        .distance{
+            font-size: 3vw;
+        }
         img{
             width: 100%;
             height: 4vw;
@@ -25,7 +31,16 @@ ion-card {
   .status{
     text-align: right;
     align-self: flex-end;
+    font-size: 3.5vw;
     .dot{
-        font-size: 10vw;
+        font-size: 10vw !important;
     }
+    .green{
+        color: #10dc60;
+    }
+  }
+  .heading{
+    padding: 3vw 5.5vw 0vw;
+    font-size: 5.5vw;
+    font-weight: 400;
   }

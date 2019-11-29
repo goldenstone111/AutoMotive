@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicesService } from '../api/services.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +9,20 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
   list=[];
-  constructor(public router:Router) { }
+  user_id:any;
+  picture:any;
+  name:any;
+  number:any;
+  isPicture=false;
+  constructor(public router:Router,public api: ServicesService) { }
 
   ngOnInit() {
+    if (localStorage.getItem("userId")) {
+      this.user_id = localStorage.getItem("userId");
+    } else {
+      this.api.logout();
+    }
+    this.Getuserprofilename()
     this.list = [
       {
         title: "Booking",
@@ -46,5 +58,29 @@ export class ProfilePage implements OnInit {
   }
   openPage(item) {
     this.router.navigate([item.component]);
+  }
+  Getuserprofilename(){
+    console.log("getuserprofilename result");
+    this.api.getuserprofilename(this.user_id).subscribe((result:any)=>{      
+      if (result.status == 200) {
+        console.log("data from getuserprofilename result ",result);
+        this.name=result.success.customer_name;
+        this.number=result.success.user_phone
+        if(result.success.customer_picture!=''){
+          console.log("data from getuserprofilename inside if ",result.success.customer_picture );
+          
+          // this.Picture = "data:image/jpeg;base64," +this.data.image;
+          this.picture=result.success.customer_picture;
+          this.isPicture=true
+        }
+        
+      } else {
+        this.api.presentToast(result.error);
+      }
+    })
+  }
+  logout(){
+    this.api.logout();
+    this.api.presentToast('You have been logout successfully.')
   }
 }

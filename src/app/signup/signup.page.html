@@ -1,7 +1,7 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="nolinesheader">
+  <ion-toolbar class="nolinestoolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios" ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -28,25 +28,18 @@
 
         <ion-col size="12" class="ion-text-center">
           <ion-item class="input-structure" lines="none">
-            <ion-select
-              formControlName="countryform"
-              (ionChange)="setCountryCode(c)"
-             
-            >
-              <ion-select-option
-                *ngFor="let c of countries; let i = index"
-                [value]="i"
-              >
-                {{ c.name }}</ion-select-option
-              >
+              <img src={{flag}} class="flag" slot="start" alt=""> 
+            <ion-select  mode="ios" (ionChange)="setCountryCode($event)" [interfaceOptions]="selectOption" >
+              <ion-select-option *ngFor="let c of countries; let i = index"   [value]="c" selected>
+                {{c.Name}}</ion-select-option>
             </ion-select>
-            <ion-label color="primary">{{ country.dial_code }}</ion-label>
+            <ion-label color="primary">{{code}}</ion-label>
             <ion-input
               placeholder="Phone Number"
               formControlName="mobile"
               maxLength="10"
               type="tel"
-            ></ion-input>
+            ></ion-input>         
           </ion-item>
           <div class="terms">
             <ion-item lines="none">
@@ -71,11 +64,11 @@
           </div>
 
           <div class=" error2">   
-            <ng-container *ngFor="let validation of validation_messages.countryform">
+            <!-- <ng-container *ngFor="let validation of validation_messages.countryform">
               <div class="error-message" *ngIf="signupForm.get('countryform').hasError(validation.type) && (signupForm.get('countryform').dirty || signupForm.get('countryform').touched)">
                 {{ validation.message }}
               </div>
-            </ng-container>
+            </ng-container> -->
             <ng-container *ngFor="let validation of validation_messages.mobile">
               <div class="error-message" *ngIf="signupForm.get('mobile').hasError(validation.type) && (signupForm.get('mobile').dirty || signupForm.get('mobile').touched)">
                 {{ validation.message }}

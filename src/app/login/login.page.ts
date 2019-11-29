@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ServicesService } from "../api/services.service";
 import {
   FormGroup,
   FormBuilder,
@@ -15,46 +16,30 @@ import { Router } from "@angular/router";
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   country: any;
+  flag:any;
+  code:any;
+  selectOption:any={
+    header:'Select One'
+  }
   countries = [
     {
-      name: "United States",
+      Name: "United State",
+      code: "USA",
       dial_code: "+1",
-      code: "USA"
-    },
-    {
-      name: "Israel",
-      dial_code: "+972",
-      code: "ILY"
-    },
-    {
-      name: "Afghanistan",
-      dial_code: "+93",
-      code: "AF"
-    },
-    {
-      name: "Albania",
-      dial_code: "+355",
-      code: "AL"
-    },
-    {
-      name: "Algeria",
-      dial_code: "+213",
-      code: "DZ"
+      icon: "../../assets/icon/usa.png"
     }
   ];
   validation_messages = {
-    countryform: [{ type: "required", message: "Please Select Country." }],
     mobile: [
       { type: "required", message: "Phone number is required." },
       { type: "maxlength", message: "Phone number must be at most 10 digit." },
       { type: "minlength", message: "Phone number must be at least 10 digit." }
     ]
   };
-  constructor(private formBuilder: FormBuilder, public router: Router) {}
+  constructor(private formBuilder: FormBuilder, public api: ServicesService, public router: Router) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      countryform: new FormControl("", [Validators.required]),
       mobile: new FormControl("", [
         Validators.required,
         Validators.maxLength(10),
@@ -67,11 +52,36 @@ export class LoginPage implements OnInit {
     console.log("Initial country ", this.country);
   }
   setCountryCode(id) {
-    console.log(id);
-    this.country = this.countries[id];
-    console.log("select country", this.country);
+    id=id.detail.value;
+    this.country = id.Name;
+    this.flag = id.icon;
+    this.code = id.dial_code;
   }
   login() {
-    this.router.navigate(["/otpverify"]);
+    this.api.login(this.code,this.loginForm.value.mobile).subscribe((result:any)=>{
+      console.log("responce sign up",result);
+      if(result.status==400){
+        this.api.presentToast(result.success);
+        this.router.navigate(['/login']);
+      }
+      else if(result.status==200){
+        this.api.presentToast(result.success);
+        this.router.navigate(["/otpverify",result]); 
+      }
+      
+    });
+  }
+  ionViewWillEnter(){
+    this.api.getCountryList().subscribe((data:any)=>{
+      console.log("data from the api getcountry data", data)
+      this.countries=data;
+    })
+  }
+  ionViewDidEnter(){
+    this.code = this.countries[0].dial_code;
+    console.log("initial code for country",this.code);
+    
+    this.flag = this.countries[0].icon;
+    console.log("initial flag for country",this.flag);
   }
 }

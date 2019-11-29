@@ -1,9 +1,10 @@
 h3{
     color: var(--font-color);
     font-family: var(--theme-font);
+    font-size: 5vw;
 }
 p{
-    font-size: 4.5vw;
+    font-size: 4.2vw;
     font-weight: 500;
     color: var(--font-color);
     font-family: var(--theme-font);
@@ -14,4 +15,16 @@ div{
 }
 .answer{
     font-weight: 400;
+}
+.question{
+    border-bottom: 0.2vw solid var(--font-color);
+    padding: 2vw 0vw;
+    color: var(--theme-color);
+    margin-top: 2vw;
+}
+ion-item{
+    border: 0.2vw solid var(--font-color);
+    margin: 2vw 0vw;
+    padding: 2vw 2vw;
+    
 }

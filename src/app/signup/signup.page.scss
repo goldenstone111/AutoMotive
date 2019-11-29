@@ -5,17 +5,18 @@
     border: 1px solid var(--font-color);
     border-radius: 10px;
     padding: 2px 0px;
-    margin: 0vw 6vw;
+    margin: 0vw 2vw;
     ion-select{
         font-family: var(--theme-font);
         color: var(--theme-color);
-        width: auto !important;
+        width: 21vw;
     }
     ion-input{
         font-family: var(--theme-font);
         color: var(--font-color);
         font-family: "open sans",sans-serif;
         font-weight: 500;
+        --padding-start: 0px;
     }
 }
 .terms{
@@ -25,7 +26,7 @@
         vertical-align: middle;
     }
 
-    margin: 3vw 6vw;
+    margin: 3vw 2vw;
     ion-checkbox{
         width: 6vw;
         height: 6vw;
@@ -49,3 +50,8 @@
     font-family: var(--theme-font);
 }
 
+.flag{
+    width: 7vw;
+    height: 6vw;
+    margin: 3vw;
+}

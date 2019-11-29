@@ -1,49 +1,69 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button icon="ios-arrow-back" mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ pagename }}</ion-title>
+    <ion-title mode="ios">{{ pagename }}</ion-title>
+    <ion-buttons slot="end">
+        <ion-button mode="ios" fill="clear" (click)="save()">save</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
+  <form [formGroup]="updateVehical">
     <ion-row>
       <ion-col size="12">
         <ion-list>
           <ion-item>
             <ion-label> Nickname </ion-label>
-            <ion-input [(ngModel)]="data.nickname"></ion-input>
+            <ion-input
+              [(ngModel)]="data.vechile_nickname"
+              formControlName="nickname"
+              class="data"
+            ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label> Make </ion-label>
-            <ion-input [(ngModel)]="data.make"></ion-input>
+            <ion-label class="data">{{data.vechile_make}} </ion-label>
           </ion-item>
           <ion-item>
             <ion-label> License </ion-label>
-            <ion-input [(ngModel)]="data.license"></ion-input>
+            <ion-input 
+              formControlName="licence"
+              [(ngModel)]="data.vechile_license"
+              placeholder="Add Licence Number"
+            ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label> Model Number </ion-label>
-            <ion-input [(ngModel)]="data.modelnumber"></ion-input>
+            <ion-label> Model </ion-label>
+            <ion-label class="data">{{data.vechile_model}} </ion-label>
           </ion-item>
           <ion-item>
             <ion-label> Color </ion-label>
-            <ion-input [(ngModel)]="data.color"></ion-input>
+            <ion-select [(ngModel)]="data.vechile_colour" formControlName="color">
+              <ion-select-option *ngFor="let color of colorlist"
+                >{{color}}</ion-select-option
+              >
+            </ion-select>
           </ion-item>
           <ion-item>
             <ion-label> Fual Type </ion-label>
-            <ion-input [(ngModel)]="data.fualtype"></ion-input>
+            <ion-select [(ngModel)]="data.vechile_fueltype" formControlName="fueltype">
+              <ion-select-option *ngFor="let type of fuellist"
+                >{{type}}</ion-select-option
+              >
+            </ion-select>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
+    </form>
   </ion-grid>
-  <ion-list> </ion-list>
 </ion-content>
 <ion-toolbar class="ion-text-center toolheight">
-  <ion-button shape="round" (click)="deletevehicle()" color="danger">
+  <ion-button mode="ios" shape="round" (click)="deletevehicle()" color="danger">
     <ion-ripple-effect> </ion-ripple-effect>
     <img src="../../assets/white_car.svg" alt="" /> &nbsp; DELETE VEHICLE
   </ion-button>

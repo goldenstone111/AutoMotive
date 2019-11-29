@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Environment } from '@ionic-native/google-maps';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -11,6 +12,7 @@ import { Environment } from '@ionic-native/google-maps';
 })
 export class AppComponent {
   constructor(
+    private router: Router,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
@@ -20,13 +22,13 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Environment.setEnv({
-      //   // api key for server
-      //   'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyDP1xXi2iFeGZQCr5WS7x-GDa6Iu2LHv2E',
-
-      //   // api key for local development
-      //   'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyDP1xXi2iFeGZQCr5WS7x-GDa6Iu2LHv2E'
-      // });
+      if(localStorage.getItem('userId')){
+        this.router.navigateByUrl('home');
+      } else{
+        this.router.navigateByUrl('authentication');
+      }
+     
+      this.statusBar.backgroundColorByHexString("#ffffff");
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

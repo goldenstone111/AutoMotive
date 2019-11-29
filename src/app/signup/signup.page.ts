@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
+import { ServicesService } from "../api/services.service";
 import {
   FormBuilder,
   FormGroup,
@@ -15,37 +16,21 @@ import { Router } from "@angular/router";
 export class SignupPage implements OnInit {
   initial: any;
   country: any;
+  flag:any;
+  code:any;
+  selectOption:any={
+    header:'Select One'
+  }
   countries = [
     {
-      name: "United States",
+      Name: "United State",
+      code: "USA",
       dial_code: "+1",
-      code: "USA"
-    },
-    {
-      name: "Israel",
-      dial_code: "+972",
-      code: "ILY"
-    },
-    {
-      name: "Afghanistan",
-      dial_code: "+93",
-      code: "AF"
-    },
-    {
-      name: "Albania",
-      dial_code: "+355",
-      code: "AL"
-    },
-    {
-      name: "Algeria",
-      dial_code: "+213",
-      code: "DZ"
+      icon: "../../assets/icon/usa.png"
     }
   ];
-
   signupForm: FormGroup;
   validation_messages = {
-    countryform: [{ type: "required", message: "Please Select Country." }],
     mobile: [
       { type: "required", message: "Phone number is required." },
       { type: "maxlength", message: "Phone number must be at most 10 digit." },
@@ -54,11 +39,10 @@ export class SignupPage implements OnInit {
     terms: [{ type: "requiredTrue", message: "Please check the box." }]
   };
 
-  constructor(private formBuilder: FormBuilder, public router: Router) {}
+  constructor(private formBuilder: FormBuilder, public router: Router, public api: ServicesService) {}
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      countryform: new FormControl("", [Validators.required]),
       mobile: new FormControl("", [
         Validators.required,
         Validators.maxLength(10),
@@ -67,18 +51,44 @@ export class SignupPage implements OnInit {
       terms: new FormControl("", [Validators.requiredTrue])
     });
     this.signupForm.valueChanges.subscribe(console.log);
-
-    this.country = this.countries[0];
-    console.log("Initial country ", this.country);
   }
 
-  // get f() { return this.signupForm.controls; }
   setCountryCode(id) {
-    console.log(id);
-    this.country = this.countries[id];
-    console.log("select country", this.country);
+    id=id.detail.value;
+    this.country = id.Name;
+    this.flag = id.icon;
+    this.code = id.dial_code;
   }
   register() {
-    this.router.navigate(["/otpverify"]);
+    this.api.presentLoading();
+    this.api.createAccount(this.code,this.signupForm.value.mobile).subscribe((result:any)=>{
+      console.log("responce sign up",result);
+      if(result.status==400){
+        this.api.presentToast(result.error);
+        this.router.navigate(['/login']);
+        this.api.loadingDismiss();
+      }
+      else if(result.status==200){
+        this.api.presentToast(result.success);
+        this.router.navigate(["/otpverify",result]);
+        this.api.loadingDismiss();
+      }
+    });
+    
+  }
+  ionViewWillEnter(){
+    // this.api.presentLoading();
+    this.api.getCountryList().subscribe((data:any)=>{
+      console.log("data from the api getcountry data", data)
+      this.countries=data;
+      // this.api.loadingDismiss();
+    })
+  }
+  ionViewDidEnter(){
+    this.code = this.countries[0].dial_code;
+    console.log("initial code for country",this.code);
+    this.country = this.countries[0].Name;
+    this.flag = this.countries[0].icon;
+    console.log("initial flag for country",this.flag);
   }
 }

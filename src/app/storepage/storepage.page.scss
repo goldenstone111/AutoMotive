@@ -1,0 +1,76 @@
+.bottombar{
+    width: 6vw;
+    height: 2.3vw;
+    background: var(--theme-color);
+    border-radius: 6vw;
+    margin-left: 20vw;
+    margin-top: -3vw;
+}
+.profilepic{
+    height: 40vw;
+    width: 40vw;
+    margin-top: 5vw;
+    margin-left: 28%;
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;  
+    }
+}
+.s_name{
+    margin: 2vw;
+    font-size: 5.2vw;
+    font-weight: 500;
+    margin-top: 2vw;
+    margin-bottom: 0px;
+}
+.highlight{
+    color: var(--theme-color);
+    font-size: 4.5vw;
+}
+.jobs{
+    margin-top: 0px;
+    margin-bottom: 0vw;
+}
+.servicename{
+    font-weight: 300;
+    padding: 0vw 2vw;
+    text-transform: capitalize;
+    margin: 3vw 0vw;
+    font-size: 5vw;
+}
+.description{
+    font-weight: 300;
+    padding: 0vw 2vw;
+    text-transform: capitalize;
+    margin: 3vw 0vw;
+    font-size: 4vw;
+}
+.price{
+    font-size: 5vw;
+    margin: 3vw 0vw;
+    font-weight: 300;
+}
+.images{
+    width: 100%;
+    height: 45vw;
+    img{
+        width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+}
+ion-card{
+    margin: 3vw;
+}
+ion-footer{
+    background: var(--theme-color);
+    color: #fff;
+    ion-icon{
+        font-size: 7vw;
+    }
+    ion-label{
+        vertical-align: super;
+    }
+}

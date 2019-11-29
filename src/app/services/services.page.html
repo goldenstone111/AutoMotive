@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Services</ion-title>
+     <ion-title mode="ios">Services</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,15 +8,19 @@
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col size="12" class="ion-no-padding ion-text-center">
-        <ion-card>
+        <ion-card mode="ios" button routerLink="/storepage">
+          <!-- [queryParams]="data" -->
+          <ion-ripple-effect></ion-ripple-effect>
           <img src="../../assets/shapes.svg" />
           <div class="card-title">NY Car Service</div>
         </ion-card>
-        <ion-card>
+        <ion-card mode="ios" button routerLink="/storepage">
+            <ion-ripple-effect></ion-ripple-effect>
           <img src="../../assets/shapes.svg" />
           <div class="card-title">NY Car Service</div>
         </ion-card>
-        <ion-card>
+        <ion-card mode="ios" button routerLink="/storepage"> 
+            <ion-ripple-effect></ion-ripple-effect>
           <img src="../../assets/shapes.svg" />
           <div class="card-title">NY Car Service</div>
         </ion-card>
@@ -25,18 +29,18 @@
   </ion-grid>
 </ion-content>
 <ion-tab-bar slot="bottom">
-  <ion-tab-button routerLink="/services">
+  <ion-tab-button >
     <ion-ripple-effect></ion-ripple-effect>
-    <ion-icon src="../../assets/home/services.svg" alt=""></ion-icon>
+    <ion-icon src="../../assets/home/astore.svg" alt=""></ion-icon>
   </ion-tab-button>
-  <ion-tab-button routerLink="#">
+  <ion-tab-button routerLink="/home">
     <ion-ripple-effect></ion-ripple-effect>
-    <ion-button shape="round" fill="outline">
+    <ion-button mode="ios" shape="round"  color="medium" fill="outline">
       <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
     </ion-button>
   </ion-tab-button>
   <ion-tab-button routerLink="/profile">
     <ion-ripple-effect></ion-ripple-effect>
-    <ion-icon src="../../assets/home/profile.svg" alt=""></ion-icon>
+    <ion-icon style="font-size: 14vw;" src="../../assets/home/profile.svg" alt=""></ion-icon>
   </ion-tab-button>
 </ion-tab-bar>

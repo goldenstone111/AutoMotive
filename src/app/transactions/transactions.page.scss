@@ -1,0 +1,18 @@
+ion-card{
+    margin: 4vw 0vw;
+    ion-card-content{
+        padding:2vw;
+        img{
+            width:10vw;
+        }
+    }
+    .title{
+        font-size: 3.8vw;
+        font: 400;
+    }
+    .time, .type{
+        font-size: 3.2vw;
+        font: 300;
+    }
+   
+}

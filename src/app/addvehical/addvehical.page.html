@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button *ngIf="!isBack"></ion-back-button>
-      <ion-button *ngIf="isBack" (click)="back()">{{backarrow}} Back</ion-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios" *ngIf="!isBack"></ion-back-button>
+      <ion-button mode="ios" *ngIf="isBack" (click)="back()">{{backarrow}} Back</ion-button>
     </ion-buttons>
-    <ion-title>Add Vehicle</ion-title>
+     <ion-title mode="ios">Add Vehicle</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,7 +22,7 @@
             (click)="setData(year)"
           >
             <ion-ripple-effect type="bounded"></ion-ripple-effect>
-            &nbsp;{{ year }}
+            &nbsp;{{ year.year }}
           </ion-item>
         </ion-list>
       </ion-col>
@@ -46,7 +46,7 @@
             button
           >
           <ion-ripple-effect type="bounded"></ion-ripple-effect>
-            &nbsp;{{ company }}
+            &nbsp;{{ company.make }}
           </ion-item>
         </ion-list>
       </ion-col>
@@ -65,7 +65,7 @@
         <ion-list>
           <ion-item *ngFor="let model of modellist" button (click)="setData(model)">
               <ion-ripple-effect type="bounded"></ion-ripple-effect>
-            &nbsp;{{ model }}
+            &nbsp;{{ model.model }}
           </ion-item>
         </ion-list>
       </ion-col>
@@ -96,24 +96,31 @@
         </ion-list>
       </ion-col>
     </ion-row>
+
     <ion-row *ngIf="step == 6">
       <ion-col class="header" size="12">
         <h3>What is the license plate #?</h3>
       </ion-col>
       <ion-col class="data" size="12">
-        <ion-item >
-          <ion-input
+        <form [formGroup]="licenceForm">
+        <ion-item style="height: auto;">
+          <ion-input formControlName="number"
             type="text"
             placeholder="License plate number "
           ></ion-input>
         </ion-item>
-        <ion-button fill="outline" shape="round" routerLink="/home">
-          SKIP FOR THIS NOW
-        </ion-button>
-        <ion-button fill="outline" shape="round" (click)="saveDetails()">
-          Save details
+      </form>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button mode="ios" shape="round" style="margin-top:10vw;" (click)="updateLicenceNumber()">
+          Update Licence Number
         </ion-button>
       </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button mode="ios" fill="outline" shape="round" (click)="skip()">
+          SKIP FOR THIS NOW
+        </ion-button>
+      </ion-col>  
     </ion-row>
   </ion-grid>
 </ion-content>

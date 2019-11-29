@@ -4,6 +4,11 @@ ion-input{
     font-family: var(--theme-font);
     font-size: 4.5vw;
 }
+ion-select{
+    width: 50%;
+    text-align: end;
+    color: var(--theme-color);
+}
 ion-label{
     font-size: 4.5vw !important;
     color: var(--font-color) !important;
@@ -17,4 +22,7 @@ ion-list{
     img{
         width: 5vw;
     }
+}
+.data{
+    text-align: end;
 }

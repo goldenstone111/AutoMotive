@@ -7,14 +7,15 @@
         height: 100%;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow:1px 3px 7px -1px var(--font-color);
+        box-shadow:1px 2px 4px -1px var(--font-color);
     }
 }
 .heading{
     color: var(--font-color);
     font-family: var(--theme-font);
+    text-transform: capitalize;
     font-size: 4.6vw;
-    font-weight: 500;
+    font-weight: 400;
     margin: 5px 10px;
 }
 ion-card{
@@ -30,7 +31,13 @@ ion-card{
             color: var(--font-color);
             font-family: var(--theme-font);
             font-size: 4.6vw;
-            font-weight: 500;
+            font-weight: 400;
+            padding-left: 2vw;
+        }
+        .logout{
+            font-size: 6.5vw;
+            color: var(--theme-color);
+            margin-right: 3vw;
         }
     }
 }

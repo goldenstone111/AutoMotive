@@ -100,7 +100,7 @@
       p {
         font-family: var(--theme-font);
         color: var(--font-color);
-        padding: 0vw 8vw;
+        padding: 0vw 3vw;
         font-size: 4.5vw;
       }
     }
@@ -109,17 +109,23 @@
     border: 1px solid var(--font-color);
     border-radius: 10px;
     padding: 5px 0px;
-    margin: 0vw 6vw;
-    ion-select {
+    margin: 0vw 3vw;
+    ion-label{
+      padding: 0vw 2vw;
+      margin: 0;
+    }
+    ion-select{
       font-family: var(--theme-font);
       color: var(--theme-color);
-    }
-    ion-input {
+      width: 21vw;
+  }
+  ion-input{
       font-family: var(--theme-font);
       color: var(--font-color);
-      font-family: "open sans", sans-serif;
+      font-family: "open sans",sans-serif;
       font-weight: 500;
-    }
+      --padding-start: 0px;
+  }
   }
   .authbtn {
     --background: transparent;
@@ -173,4 +179,63 @@
 }
 --ion-font-family:var(--theme-font);
 --ion-text-color: var(--font-color);
+}
+.nolinestoolbar{
+  --border-width: 0px !important;
+}
+.nolinesheader{
+  .header-md:after{
+    background-position: left 0 top -10px !important;
+  }
+  
+}
+
+
+
+.select-alert{
+  .alert-wrapper{
+    width: 85vw !important;
+    max-width: 85vw !important;
+    height: 105vw !important;
+    max-height: 105vw !important;
+    
+  }
+  .alert-radio-group{
+    max-height: -webkit-fill-available !important;
+    height: -webkit-fill-available !important;
+    .alert-radio-label{
+      color: #000;
+      font-size: 4vw;
+      font-weight: 300;
+    }
+  }
+  .alert-button-group{
+    height: 18vw;
+  }
+
+}
+
+.themeAlert{
+  .alert-wrapper{
+    max-width: 100% !important;
+    width: 85vw !important;
+    height: 55vw !important;
+    max-height: 55vw !important;
+    .alert-head{
+      border-bottom: 0.2vw solid #08cebb73 !important;
+      .alert-title {
+        color: var(--theme-color);
+      }
+    }
+    .alert-message{
+      height: 28vw;
+      font-size: 4vw;
+      margin: 10vw 4vw;
+      padding: 0px;
+    }
+    .alert-button{
+      border-right: 0.2vw solid #08cebb73;
+    border-top: 0.2vw solid #08cebb73;
+    }
+  }
 }

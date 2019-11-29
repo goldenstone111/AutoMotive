@@ -1,33 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>My Location</ion-title>
+     <ion-title mode="ios">My Location</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <ion-card>
+        <ion-card mode="ios" *ngFor="let item of Address">
           <ion-card-content>
-            <p class="heading">Name - Hawks Code</p>
-            <p>2/40, Hawks code, 99 Tower,</p>
-            <p>12 - British Park Street,</p>
-            <p>London,</p>
-            <p>30265.</p>
+            <p class="heading">{{item.address_title}}</p>
+            <p>{{item.address_location}}</p>
+            <p>{{item.address_locality}}</p>
+
           </ion-card-content>
           <ion-row>
-            <ion-col size="6" class="ion-no-padding">
-              <ion-button expand="full" class="edit">
+            <!-- <ion-col size="6" class="ion-no-padding">
+              <ion-button mode="ios" expand="full" class="edit">
                 <ion-ripple-effect></ion-ripple-effect>
                 <ion-icon name="md-create"></ion-icon>
                 Edit
               </ion-button>
-            </ion-col>
-            <ion-col size="6" class="ion-no-padding">
-              <ion-button expand="full" class="delete">
+            </ion-col> -->
+            <ion-col size="12" class="ion-no-padding">
+              <ion-button mode="ios" expand="full" class="delete" (click)="delete(item.location_id)">
                 <ion-ripple-effect></ion-ripple-effect>
                 <ion-icon name="trash"></ion-icon>
                 Delete
@@ -35,37 +34,12 @@
             </ion-col>
           </ion-row>
         </ion-card>
-        <ion-card>
-            <ion-card-content>
-              <p class="heading">Name - Hawks Code</p>
-              <p>2/40, Hawks code, 99 Tower,</p>
-              <p>12 - British Park Street,</p>
-              <p>London,</p>
-              <p>30265.</p>
-            </ion-card-content>
-            <ion-row>
-              <ion-col size="6" class="ion-no-padding">
-                <ion-button expand="full" class="edit" >
-                  <ion-ripple-effect></ion-ripple-effect>
-                  <ion-icon name="md-create"></ion-icon>
-                  Edit
-                </ion-button>
-              </ion-col>
-              <ion-col size="6" class="ion-no-padding">
-                <ion-button expand="full" class="delete">
-                  <ion-ripple-effect></ion-ripple-effect>
-                  <ion-icon name="trash"></ion-icon>
-                  Delete
-                </ion-button>
-              </ion-col>
-            </ion-row>
-          </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
 <ion-toolbar class="ion-text-center toolheight">
-  <ion-button shape="round" routerLink="/newaddress">
+  <ion-button mode="ios" shape="round" routerLink="/newaddress">
     <ion-ripple-effect>
     </ion-ripple-effect>
     <img src="../../assets/home/white_location_pin.svg" alt="" /> &nbsp; ADD ADDRESS

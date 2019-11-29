@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>Bookings</ion-title>
+     <ion-title mode="ios">Bookings</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,25 +11,25 @@
   <ion-grid>
     <ion-row>
       <ion-col size="4" class="ion-text-center">
-        <ion-button fill="clear" (click)="getdata(1)">
+        <ion-button mode="ios" fill="clear" (click)="getdata(1)">
           <ion-ripple-effect></ion-ripple-effect> PENDING</ion-button
         >
         <div class="bottombar" *ngIf="active1"></div>
       </ion-col>
       <ion-col size="4" class="ion-text-center">
-        <ion-button fill="clear" (click)="getdata(2)"
+        <ion-button mode="ios" fill="clear" (click)="getdata(2)"
           ><ion-ripple-effect></ion-ripple-effect> ASSIGNED
         </ion-button>
         <div class="bottombar" *ngIf="active2"></div>
       </ion-col>
       <ion-col size="4" class="ion-text-center">
-        <ion-button fill="clear" (click)="getdata(3)"
+        <ion-button mode="ios" fill="clear" (click)="getdata(3)"
           ><ion-ripple-effect></ion-ripple-effect> PAST
         </ion-button>
         <div class="bottombar" *ngIf="active3"></div>
       </ion-col>
       <ion-col size="12">
-        <ion-card button *ngFor="let booking of bookingData; let i = index;" routerLink="/recipt" [queryParams]="booking" >
+        <ion-card mode="ios" button *ngFor="let booking of bookingData; let i = index;" routerLink="/recipt" [queryParams]="booking" >
           <ion-ripple-effect></ion-ripple-effect>
           <ion-grid>
             <ion-row>

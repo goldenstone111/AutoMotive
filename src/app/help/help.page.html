@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>Help</ion-title>
+     <ion-title mode="ios">Help</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,13 +18,14 @@
           <ion-item
             *ngFor="let questions of QuestionList; let i = index"
             button
+            lines="none"
           >
             <div  (click)="showmore(i)" id="{{i}}" style="display: block; ">
-              <p>{{ questions.question }}</p>
+              <p>{{ questions.tbl_faq_question }}</p>
             </div>
             <div (click)="showless(i)" id="{{i}}second" style="display: none; ">
-              <p>{{ questions.question }}</p>
-              <p class="answer">{{ questions.answer }}</p>
+              <p class="question">{{ questions.tbl_faq_question }}</p>
+              <p class="answer">{{ questions.tbl_faq_answer }}</p>
             </div>
           </ion-item>
         </ion-list>

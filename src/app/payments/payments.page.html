@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>Payments</ion-title>
+     <ion-title mode="ios">Payments</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,42 +11,20 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-card>
+        <ion-card mode="ios" *ngFor="let data of Data">
           <ion-card-content>
-            <ion-row>
-              <ion-col size="9"     style="align-self: flex-end;">
-                <p>**** **** **** 4821  </p>
+            <ion-row >
+              <ion-col size="9"   style="align-self: flex-end;">
+                <p>**** **** **** {{data.last4}}  </p>
               </ion-col>
               <ion-col size="3">
-                <img src="../../assets/lock.svg" alt="">
+                <img src="{{data.imageurl}}" alt="">
               </ion-col>
             </ion-row>
           </ion-card-content>
           <ion-row>
             <ion-col size="12" class="ion-no-padding">
-              <ion-button expand="full" class="delete">
-                <ion-ripple-effect></ion-ripple-effect>
-                <ion-icon name="trash"></ion-icon>
-                Delete
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-
-        <ion-card>
-          <ion-card-content>
-            <ion-row>
-              <ion-col size="9"     style="align-self: flex-end;">
-                <p>**** **** **** 7845  </p>
-              </ion-col>
-              <ion-col size="3">
-                <img src="../../assets/lock.svg" alt="">
-              </ion-col>
-            </ion-row>
-          </ion-card-content>
-          <ion-row>
-            <ion-col size="12" class="ion-no-padding">
-              <ion-button expand="full" class="delete">
+              <ion-button mode="ios" expand="full" class="delete" (click)="DeleteCard(data.id)">
                 <ion-ripple-effect></ion-ripple-effect>
                 <ion-icon name="trash"></ion-icon>
                 Delete
@@ -59,7 +37,7 @@
   </ion-grid> 
 </ion-content>
 <ion-toolbar class="ion-text-center toolheight">
-  <ion-button shape="round" routerLink="/completeprofile">
+  <ion-button mode="ios" shape="round" (click)="addCard()">
     <ion-ripple-effect>
     </ion-ripple-effect>
     <img src="../../assets/home/card.svg" alt="" /> &nbsp; ADD CARD

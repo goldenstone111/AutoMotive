@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ServicesService } from '../api/services.service';
 
 @Component({
   selector: "app-help",
@@ -7,29 +8,8 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HelpPage implements OnInit {
   expand=false;
-  QuestionList = [
-    {
-      question: "how to schedule a booking?",
-      answer:
-        "to make a booking for any kind of service you just need to login or signup (if you dont have account), then you fill your detail and vehical detail then you can make a booking with the following steps"
-    },
-    {
-      question: "how to schedule a booking?",
-      answer:
-        "to make a booking for any kind of service you just need to login or signup (if you dont have account), then you fill your detail and vehical detail then you can make a booking with the following steps"
-    },
-    {
-      question: "how to schedule a booking?",
-      answer:
-        "to make a booking for any kind of service you just need to login or signup (if you dont have account), then you fill your detail and vehical detail then you can make a booking with the following steps"
-    },
-    {
-      question: "how to schedule a booking?",
-      answer:
-        "to make a booking for any kind of service you just need to login or signup (if you dont have account), then you fill your detail and vehical detail then you can make a booking with the following steps"
-    }
-  ];
-  constructor() {}
+  QuestionList = [];
+  constructor(private api:ServicesService) {}
 
   ngOnInit() {}
   showmore(i)
@@ -42,4 +22,16 @@ export class HelpPage implements OnInit {
     document.getElementById(i+"second").style.display = 'none';
     document.getElementById(i).style.display = 'block';
   }
+  getallcustomerfaq(){
+    this.api.getallcustomerfaq().subscribe((result:any)=>{
+      console.log("asdfasdff",result);
+      
+      if(result.status==200){
+        this.QuestionList=result.success
+      }
+    })
+  }
+    ionViewWillEnter(){
+      this.getallcustomerfaq();
+    }
 }

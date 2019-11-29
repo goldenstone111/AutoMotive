@@ -1,7 +1,7 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="nolinesheader">
+  <ion-toolbar class="nolinestoolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -154,36 +154,36 @@
         </ion-col>
         <ion-col size="6">
           <ion-label>First Name</ion-label>
-          <ion-input type="text" formControlName="fname"></ion-input>
+          <ion-input type="text"  placeholder="First Name" formControlName="fname"></ion-input>
         </ion-col>
         <ion-col size="6">
           <ion-label>Last Name</ion-label>
-          <ion-input type="text" formControlName="lname"></ion-input>
+          <ion-input type="text"  placeholder="Last Name" formControlName="lname"></ion-input>
         </ion-col>
         <ion-col size="12">
           <ion-label>Email</ion-label>
-          <ion-input type="email" formControlName="email"></ion-input>
+          <ion-input type="email"  placeholder="Enter Email" formControlName="email"></ion-input>
         </ion-col>
         <ion-col size="12">
           <ion-label>Zip Code</ion-label>
-          <ion-input type="tel" formControlName="zip"></ion-input>
+          <ion-input type="tel"  placeholder="Enter Zip" formControlName="zip"></ion-input>
         </ion-col>
         <ion-col size="12">
           <ion-label>City</ion-label>
-          <ion-input type="text" formControlName="city"></ion-input>
+          <ion-input placeholder="Enter City" type="text" formControlName="city"></ion-input>
         </ion-col>
         <ion-col size="12">
           <ion-label>State</ion-label>
-          <ion-input type="text" formControlName="state"></ion-input>
+          <ion-input  placeholder="Enter State" type="text" formControlName="state"></ion-input>
         </ion-col>
         <ion-col size="12">
           <ion-label>Country</ion-label>
           <ion-item lines="none">
-            <ion-select slot="end" formControlName="country">
+            <ion-select  mode="ios" slot="end" [interfaceOptions]="selectOption" formControlName="country" placeholder="Select Country">
               <ion-select-option
                 *ngFor="let c of countries"
-                value="{{ c.code }}"
-                >{{ c.name }}
+                value="{{ c.nicename }}" selected
+                >{{ c.nicename }}
               </ion-select-option>
             </ion-select>
           </ion-item>
@@ -219,7 +219,7 @@
         </ion-col>
         <ion-col size="12">
           <ion-label>Card Number</ion-label>
-          <ion-input style=" border: solid 0.5px var(--theme-color)"
+          <ion-input  style=" border: solid 0.5px var(--theme-color); letter-spacing: 1vw;"
             formControlName="cnumber"
             placeholder="1234 5678 8765 4321"
           ></ion-input>
@@ -229,16 +229,16 @@
           <ion-row align-items: baseline>
             <ion-col size="8" class="ion-no-padding">
               <div>
-                <ion-select [interfaceOptions]="selectHeader" placeholder="Month" class="cselect" slot="end" formControlName="emonth">
+                <ion-select  mode="ios" [interfaceOptions]="selectOption" placeholder="Month" class="cselect" slot="end" formControlName="emonth">
                   <ion-select-option  *ngFor="let m of monthlist;">{{m}}</ion-select-option>
                 </ion-select>
-                <ion-select placeholder="Year" [interfaceOptions]="selectHeader" class="cselect" slot="end" formControlName="eyear">
+                <ion-select  mode="ios" placeholder="Year" [interfaceOptions]="selectOption" class="cselect" slot="end" formControlName="eyear">
                   <ion-select-option  *ngFor="let y of yearlist;">20{{y}}</ion-select-option>
                 </ion-select>
               </div>
             </ion-col>
             <ion-col size="4" class="ion-no-padding">
-              <ion-input placeholder="" formControlName="cvv" class="cvv"></ion-input>
+              <ion-input type="tel" placeholder="" formControlName="cvv" class="cvv"></ion-input>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -275,6 +275,17 @@
           shape="round"
         >
           <ion-ripple-effect></ion-ripple-effect> CONTINUE
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center" style="margin-top: 5vw">
+        <ion-button
+          class="authbtn"
+          color="primary"
+          (click)="skip()"
+          shape="round"
+          fill='outline'
+        >
+          <ion-ripple-effect></ion-ripple-effect> SKIP
         </ion-button>
       </ion-col>
     </ion-row>

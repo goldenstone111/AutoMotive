@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
+    </ion-buttons>
+     <ion-title mode="ios">
+      <!-- Tracking ID : 12345 -->
+      Complete Transaction
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button mode="ios" fill="clear" slot="end"> Cancel </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <p class="heading">Location</p>
+        <ion-row>
+          <ion-col size="1">
+            <img
+              class="thumbnail"
+              src="../../assets/home/location_pin.svg"
+              alt=""
+          /></ion-col>
+          <ion-col size="8"> Address of the person </ion-col>
+          <ion-col size="3">
+            <ion-button mode="ios" fill="clear" expand="full" class="clearbtn">
+              Change</ion-button
+            ></ion-col
+          >
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <hr />
+    <ion-row>
+      <ion-col size="12">
+        <p class="heading">Payment Method</p>
+        <ion-label>Card</ion-label>
+        <ion-row>
+          <ion-col size="1">
+            <img
+              class="thumbnail"
+              src="../../assets/home/location_pin.svg"
+              alt=""
+          /></ion-col>
+          <ion-col size="8"> **** **** **** 4821 </ion-col>
+          <ion-col size="3">
+            <ion-button mode="ios" fill="clear" expand="full" class="clearbtn">
+              Change</ion-button
+            ></ion-col
+          >
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <hr />
+    <ion-row>
+      <ion-col size="12">
+        <p class="heading">Apply Prome Code</p>
+        <ion-row>
+          <ion-col size="9" class="ion-no-padding">
+            <ion-input placeholder="Your Promo code"></ion-input>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button mode="ios" fill="clear" expand="full" class="clearbtn">
+              Apply
+            </ion-button></ion-col
+          >
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <hr />
+    <ion-row>
+      <ion-col size="12">
+        <p class="heading">Your payment fee breakdown</p>
+        <ion-row class="billData">
+          <ion-col size="6" class="ion-no-padding">
+            <p>Booking fees</p>
+            <p>Engine Check</p>
+            <p>Travel Charge</p>
+            <p>Discount</p>
+          </ion-col>
+          <ion-col size="6" class="value ion-no-padding">
+            <p>$ 05</p>
+            <p>$ 35</p>
+            <p>$ 07 (2 Miles )</p>
+            <p>$ 05</p>
+          </ion-col>
+        </ion-row>
+        <hr />
+        <ion-row >
+          <ion-col size="6">
+            <p class="subheading">Total</p>
+          </ion-col>
+          <ion-col size="6" class="value">
+            <p class="subheading">$ 40.00</p>
+          </ion-col>
+        </ion-row>
+        <hr />
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button mode="ios" shape="round" class="bookbtn" routerLink="/tracking" > <ion-ripple-effect></ion-ripple-effect> BOOK A MECHANIC </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

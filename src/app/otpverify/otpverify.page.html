@@ -1,7 +1,7 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="nolinesheader">
+  <ion-toolbar class="nolinestoolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -105,7 +105,7 @@
           </div>
           <div *ngIf="!isTimer">
             <p>Did not receive OTP?</p>
-            <ion-button fill="clear"> Resend OTP </ion-button>
+            <ion-button mode="ios" fill="clear" (click)="resendOtp()"> Resend OTP </ion-button>
           </div>
         </div>
       </ion-col>

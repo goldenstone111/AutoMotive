@@ -1,6 +1,6 @@
 ion-grid{
     color: var(--font-color);
-    h3{font-weight: 500; padding-left: 3vw; }
+    h3{font-weight: 400; font-size: 4.5vw; }
     padding: 0vw 3vw;
     ion-item{
    
@@ -20,6 +20,8 @@ ion-grid{
         margin-top:27vw;
     }
 }
-ion-button{
-    height:12vw;
+ion-searchbar{
+    border-radius: 6vw;
+    --font-color: var(--theme-color);
+    border: 2px solid #08cebb42;
 }

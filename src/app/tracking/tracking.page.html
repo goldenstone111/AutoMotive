@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+        <ion-back-button icon='ios-arrow-back' mode="ios"></ion-back-button>
+    </ion-buttons>
+     <ion-title mode="ios">
+      Tracking ID : 12345
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button mode="ios" fill="clear" slot="end"> Cancel </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row >
+    <ion-col>
+      <ion-list >
+        <ion-item lines="none">
+          <p>Service Requested.</p>
+        </ion-item>
+        
+        <ion-item lines="none">
+            <p>Service Accepted.</p>
+          </ion-item>
+          
+        <ion-item lines="none">
+            <p>Mechanic is on the way.</p>
+          </ion-item>
+          
+        <ion-item lines="none">
+            <p>Mechanic has arrived.</p>
+          </ion-item>
+          
+        <ion-item lines="none">
+            <p>Job started</p>
+          </ion-item>
+        
+          <ion-item lines="none">
+              <p>Job completed</p>
+            </ion-item>
+            
+        <ion-item lines="none">
+            <p>Invoice raised</p>
+          </ion-item>
+      </ion-list>
+      
+    </ion-col>
+    <ion-col size="12" class="ion-text-center">
+      <ion-button mode="ios" shape="round" fill="outline" (click)="openModal()">Live Track</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>  
+</ion-content>
